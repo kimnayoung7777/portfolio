@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Backend Developer Portfolio</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <nav class="navbar" aria-label="Main navigation">
+        <a href="#hero" class="logo">Backend.dev</a>
+
+        <ul class="nav-menu">
+          <li><a href="#hero" class="nav-link active">Home</a></li>
+          <li><a href="#about" class="nav-link">About</a></li>
+          <li><a href="#skills" class="nav-link">Tech Stack</a></li>
+          <li><a href="#projects" class="nav-link">Projects</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+
+        <div class="nav-controls">
+          <button class="theme-toggle" type="button" aria-label="다크모드로 변경" aria-pressed="false">
+            <span class="theme-toggle-track" aria-hidden="true">
+              <span class="theme-toggle-thumb"></span>
+            </span>
+          </button>
+
+          <button class="menu-toggle" type="button" aria-label="메뉴 열기" aria-expanded="false">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section id="hero" class="section hero-section">
+        <div class="container hero-grid">
+          <div class="hero-copy">
+            <p class="eyebrow">Junior Backend Developer</p>
+            <h1>안정적인 API와 확장 가능한 서버를 만드는 신입 백엔드 개발자 김민준입니다.</h1>
+            <p class="hero-description">
+              Java와 Spring을 중심으로 서비스 흐름을 이해하고, 데이터베이스 설계부터 배포 자동화까지
+              책임감 있게 완성하는 개발자를 지향합니다.
+            </p>
+            <div class="hero-actions">
+              <a href="#projects" class="btn btn-primary">View Projects</a>
+              <a href="#contact" class="btn btn-outline">Contact</a>
+            </div>
+          </div>
+
+          <div class="hero-panel" aria-label="Backend developer summary">
+            <div class="terminal-card">
+              <div class="terminal-top">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+              <pre><code>const developer = {
+  name: "Kim Minjun",
+  role: "Backend Developer",
+  stack: ["Java", "Spring", "MySQL", "AWS"],
+  focus: "Reliable service architecture"
+};</code></pre>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="about" class="section">
+        <div class="container">
+          <div class="section-heading">
+            <p class="eyebrow">About Me</p>
+            <h2>사용자 경험을 뒷받침하는 서버 개발자</h2>
+          </div>
+
+          <div class="about-grid">
+            <div class="profile-card">
+              <div class="profile-image" aria-label="프로필 이미지 영역">
+                <span>KMJ</span>
+              </div>
+              <h3>김민준</h3>
+              <p>Junior Backend Developer</p>
+            </div>
+
+            <div class="about-content">
+              <p>
+                웹 서비스의 핵심 흐름을 이해하고, 명확한 API 설계와 안정적인 데이터 처리에 관심이 많습니다.
+                작은 기능도 요구사항, 예외 상황, 운영 환경을 함께 고려하며 완성도 있게 구현하려고 노력합니다.
+              </p>
+
+              <div class="strength-list">
+                <article class="strength-card">
+                  <span>01</span>
+                  <h3>문제 분해</h3>
+                  <p>복잡한 요구사항을 작은 단위로 나누고 우선순위를 정해 구현합니다.</p>
+                </article>
+                <article class="strength-card">
+                  <span>02</span>
+                  <h3>꾸준한 학습</h3>
+                  <p>Spring, DB, AWS를 프로젝트에 적용하며 실무 감각을 쌓고 있습니다.</p>
+                </article>
+                <article class="strength-card">
+                  <span>03</span>
+                  <h3>협업 중심</h3>
+                  <p>명확한 커밋, 이슈 정리, 문서화를 통해 팀원이 이해하기 쉬운 개발을 지향합니다.</p>
+                </article>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="skills" class="section">
+        <div class="container">
+          <div class="section-heading">
+            <p class="eyebrow">Tech Stack</p>
+            <h2>프로젝트에 사용해 본 기술</h2>
+          </div>
+
+          <div class="stack-grid">
+            <article class="stack-card">
+              <h3>Frontend</h3>
+              <div class="tag-list">
+                <span>HTML</span><span>CSS</span><span>JS</span><span>jQuery</span><span>React</span>
+              </div>
+            </article>
+            <article class="stack-card">
+              <h3>Backend</h3>
+              <div class="tag-list">
+                <span>Java</span><span>Spring</span>
+              </div>
+            </article>
+            <article class="stack-card">
+              <h3>Database</h3>
+              <div class="tag-list">
+                <span>MySQL</span><span>Oracle</span>
+              </div>
+            </article>
+            <article class="stack-card">
+              <h3>Infra</h3>
+              <div class="tag-list">
+                <span>AWS EC2</span><span>S3</span><span>RDS</span><span>CloudFront</span>
+              </div>
+            </article>
+            <article class="stack-card">
+              <h3>DevOps</h3>
+              <div class="tag-list">
+                <span>Docker</span><span>GitHub Actions</span>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="projects" class="section">
+        <div class="container">
+          <div class="section-heading">
+            <p class="eyebrow">Projects</p>
+            <h2>주요 프로젝트</h2>
+          </div>
+
+          <div class="project-grid">
+            <article class="project-card">
+              <div class="project-image project-image-one"></div>
+              <div class="project-body">
+                <h3>Study Mate</h3>
+                <p>스터디 모집, 일정 관리, 참여 신청 기능을 제공하는 커뮤니티 서비스입니다.</p>
+                <div class="tag-list">
+                  <span>Java</span><span>Spring</span><span>MySQL</span>
+                </div>
+                <div class="project-actions">
+                  <a href="https://github.com/" target="_blank" rel="noopener" class="btn btn-small">GitHub</a>
+                  <a href="#" class="btn btn-small btn-outline">Live Demo</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="project-card">
+              <div class="project-image project-image-two"></div>
+              <div class="project-body">
+                <h3>Order API Server</h3>
+                <p>주문 생성, 결제 상태 관리, 관리자 조회 기능을 구현한 REST API 서버입니다.</p>
+                <div class="tag-list">
+                  <span>Spring Boot</span><span>JPA</span><span>Oracle</span>
+                </div>
+                <div class="project-actions">
+                  <a href="https://github.com/" target="_blank" rel="noopener" class="btn btn-small">GitHub</a>
+                  <a href="#" class="btn btn-small btn-outline">Live Demo</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="project-card">
+              <div class="project-image project-image-three"></div>
+              <div class="project-body">
+                <h3>Cloud File Box</h3>
+                <p>AWS S3를 활용해 파일 업로드, 다운로드, 권한 관리를 제공하는 서비스입니다.</p>
+                <div class="tag-list">
+                  <span>AWS S3</span><span>EC2</span><span>RDS</span>
+                </div>
+                <div class="project-actions">
+                  <a href="https://github.com/" target="_blank" rel="noopener" class="btn btn-small">GitHub</a>
+                  <a href="#" class="btn btn-small btn-outline">Live Demo</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="project-card">
+              <div class="project-image project-image-four"></div>
+              <div class="project-body">
+                <h3>Deploy Pipeline</h3>
+                <p>Docker와 GitHub Actions로 빌드, 테스트, 배포를 자동화한 CI/CD 실습 프로젝트입니다.</p>
+                <div class="tag-list">
+                  <span>Docker</span><span>GitHub Actions</span><span>AWS</span>
+                </div>
+                <div class="project-actions">
+                  <a href="https://github.com/" target="_blank" rel="noopener" class="btn btn-small">GitHub</a>
+                  <a href="#" class="btn btn-small btn-outline">Live Demo</a>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="section contact-section">
+        <div class="container">
+          <div class="section-heading">
+            <p class="eyebrow">Contact</p>
+            <h2>함께 성장할 팀을 찾고 있습니다</h2>
+          </div>
+
+          <div class="contact-card">
+            <p>프로젝트, 채용, 협업 관련 연락을 기다립니다.</p>
+            <div class="contact-actions">
+              <a href="mailto:minjun.backend@example.com" class="btn btn-primary">Email</a>
+              <a href="https://github.com/" target="_blank" rel="noopener" class="btn btn-outline">GitHub</a>
+              <a href="https://open.kakao.com/" target="_blank" rel="noopener" class="btn btn-outline">Kakao Open Chat</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer-inner">
+        <p>김민준</p>
+        <p>Copyright 2026. Kim Minjun. All rights reserved.</p>
+        <div class="footer-links">
+          <a href="https://github.com/" target="_blank" rel="noopener">GitHub</a>
+          <a href="#" target="_blank" rel="noopener">Blog</a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
