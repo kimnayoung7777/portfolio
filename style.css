@@ -306,8 +306,8 @@ h3 {
   background: linear-gradient(135deg, var(--accent), var(--accent-strong));
   font-weight: 800;
   transition: 180ms ease;
-  font-family: inherit; /* 폰트 종류를 동일하게 맞춤 */
-  font-size: 1rem; /* 글씨 크기를 동일하게 맞춤 */
+  font-family: inherit; /* ?�트 종류�??�일?�게 맞춤 */
+  font-size: 1rem; /* 글???�기�??�일?�게 맞춤 */
 }
 
 .btn:hover {
@@ -406,14 +406,14 @@ pre {
     );
 }
 
-/* 썸네일 컨테이너 높이 지정 */
+/* ?�네??컨테?�너 ?�이 지??*/
 .project-thumbnail {
-  height: 330px; /* 원하는 높이로 조절하세요 */
-  overflow: hidden; /* 영역을 벗어나는 이미지 부분 숨김 */
+  height: 330px; /* ?�하???�이�?조절?�세??*/
+  overflow: hidden; /* ?�역??벗어?�는 ?��?지 부�??��? */
   flex-shrink: 0;
 }
 
-/* 이미지 스타일 */
+/* ?��?지 ?��???*/
 .project-thumbnail img {
   width: 100%;
   height: 100%;
@@ -484,6 +484,10 @@ pre {
 }
 
 .stack-card {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-content: start;
+  gap: 24px;
   min-height: 100%;
   padding: 32px;
   border-radius: 12px;
@@ -491,17 +495,18 @@ pre {
 }
 
 .stack-card > h2 {
-  margin: 0 0 28px;
+  grid-column: 1 / -1;
+  margin: 0;
   font-size: 1.45rem;
   color: var(--text);
 }
 
 .stack-group {
-  margin-top: 30px;
-}
-
-.stack-group:first-of-type {
-  margin-top: 0;
+  min-width: 0;
+  padding: 18px;
+  border: 1px solid rgba(52, 118, 105, 0.12);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.34);
 }
 
 .stack-group h3 {
@@ -517,29 +522,41 @@ pre {
 }
 
 .skill-item {
-  display: grid;
-  grid-template-columns: minmax(110px, max-content) 1fr 42px;
+  position: relative;
+  display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 14px;
+  width: 100%;
+  min-width: 0;
 }
 
 .skill-name {
   display: inline-flex;
+  flex: 0 0 100px;
   align-items: center;
   justify-content: center;
   min-height: 34px;
+  max-width: 130px;
   padding: 7px 13px;
   border: 1px solid rgba(118, 215, 196, 0.34);
   border-radius: 999px;
   color: var(--text);
   background: rgba(118, 215, 196, 0.14);
-  font-size: 0.9rem;
+  font-size: clamp(0.78rem, 0.95vw, 0.9rem);
   font-weight: 700;
+  line-height: 1.15;
+  text-align: center;
   white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.skill-name.long-text {
+  font-size: 0.72rem !important; /* 긴 글자는 조금 더 작게 */
 }
 
 .progress-bg {
-  width: 100%;
+  flex: 1 1 0;
+  min-width: 80px;
   height: 7px;
   overflow: hidden;
   border-radius: 999px;
@@ -553,12 +570,18 @@ pre {
 }
 
 .skill-percent {
+  position: absolute;
+  right: 0;
+  top: 50%;
   color: var(--muted);
   font-size: 0.84rem;
   font-weight: 800;
   text-align: right;
+  padding: 2px 0 2px 8px;
+  background: var(--card-bg);
+  pointer-events: none;
   opacity: 0;
-  transform: translateX(-4px);
+  transform: translate(8px, -50%);
   transition:
     opacity 180ms ease,
     transform 180ms ease;
@@ -566,7 +589,7 @@ pre {
 
 .skill-item:hover .skill-percent {
   opacity: 1;
-  transform: translateX(0);
+  transform: translate(0, -50%);
 }
 
 .stack-frontend {
@@ -585,8 +608,8 @@ pre {
   --skill-color: #f5cba7;
 }
 
-.stack-devops {
-  --skill-color: #f5b7b1;
+.stack-infra-devops {
+  --skill-color: linear-gradient(90deg, #f5cba7, #f5b7b1);
 }
 
 .stack-frontend .skill-name {
@@ -605,8 +628,8 @@ pre {
   background: rgba(245, 203, 167, 0.24);
 }
 
-.stack-devops .skill-name {
-  background: rgba(245, 183, 177, 0.24);
+.stack-infra-devops .skill-name {
+  background: rgba(245, 203, 167, 0.24);
 }
 
 .tag-list {
@@ -707,8 +730,8 @@ body.dark-mode .project-image {
 
 .contact-card {
   padding: clamp(26px, 5vw, 48px);
-  width: 80%; /* 전체 너비의 80%만 차지하게 함 */
-  max-width: 600px; /* 아무리 커져도 600px을 넘지 않게 함 */
+  width: 80%; /* ?�체 ?�비??80%�?차�??�게 ??*/
+  max-width: 600px; /* ?�무�?커져??600px???��? ?�게 ??*/
   margin: 0 auto;
 }
 
@@ -811,18 +834,67 @@ body.dark-mode .project-image {
   }
 
   .stack-card {
+    grid-template-columns: 1fr;
     padding: 24px;
   }
 
   .skill-item {
-    grid-template-columns: 1fr;
-    gap: 8px;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+    width: 100%;
   }
 
   .skill-name {
-    width: fit-content;
+    flex: 0 0 auto;
+    width: 100%;
+    max-width: none;
+    padding: 7px 13px;
+    background: rgba(118, 215, 196, 0.14);
+    font-size: 0.85rem;
   }
 
+  .stack-frontend .skill-name {
+    background: rgba(163, 228, 215, 0.22);
+  }
+
+  .stack-backend .skill-name {
+    background: rgba(174, 214, 241, 0.24);
+  }
+
+  .stack-database .skill-name {
+    background: rgba(210, 180, 222, 0.24);
+  }
+
+  .stack-infra-devops .skill-name {
+    background: rgba(245, 203, 167, 0.24);
+  }
+
+  .progress-bg {
+    flex: 0 0 auto;
+    width: 100%;
+    min-width: 0;
+    height: 8px;
+    border-radius: 999px;
+    background: rgba(105, 122, 118, 0.16);
+    position: static;
+  }
+
+  .skill-percent {
+    right: 0;
+    top: auto;
+    bottom: 0;
+    font-size: 0.76rem;
+    transform: translateX(8px);
+    transition:
+      opacity 180ms ease,
+      transform 180ms ease;
+  }
+
+  .skill-item:hover .skill-percent {
+    opacity: 1;
+    transform: translateX(0);
+  }
   .footer-inner {
     flex-direction: column;
     justify-content: center;
@@ -846,18 +918,18 @@ body.dark-mode .project-image {
   }
 }
 
-/*추가*/
+/*추�?*/
 
-/* Contact 카드 내부를 기준점으로 설정 (매우 중요) */
+/* Contact 카드 ?��?�?기�??�으�??�정 (매우 중요) */
 .contact-card {
   position: relative;
   overflow: hidden;
 }
 
-/* 카드 내부 전용 오버레이 */
+/* 카드 ?��? ?�용 ?�버?�이 */
 .card-overlay {
-  display: none; /* JS로 제어 (기본 숨김) */
-  position: absolute; /* contact-card 내부 기준으로 위치 지정 */
+  display: none; /* JS�??�어 (기본 ?��?) */
+  position: absolute; /* contact-card ?��? 기�??�로 ?�치 지??*/
   top: 0;
   left: 0;
   width: 100%;
@@ -867,20 +939,20 @@ body.dark-mode .project-image {
   z-index: 10;
   cursor: pointer;
 
-  /* 내부 요소 중앙 정렬 */
+  /* ?��? ?�소 중앙 ?�렬 */
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
 
-/* 오버레이 텍스트 스타일 */
+/* ?�버?�이 ?�스???��???*/
 .overlay-content {
   color: #ffffff;
   text-align: center;
 }
 
 .overlay-content p {
-  margin: 0 0 5px 0 !important; /* 기존 p태그 마진 덮어쓰기 */
+  margin: 0 0 5px 0 !important; /* 기존 p?�그 마진 ??��?�기 */
   color: #cccccc !important;
   font-size: 0.9rem;
 }
@@ -896,7 +968,7 @@ body.dark-mode .project-image {
   font-size: 0.8rem;
 }
 
-/* 우측 하단 고정 토스트 메시지 */
+/* ?�측 ?�단 고정 ?�스??메시지 */
 .toast {
   visibility: hidden;
   position: fixed;
