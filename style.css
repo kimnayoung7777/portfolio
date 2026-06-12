@@ -215,7 +215,7 @@ body.dark-mode .theme-toggle-thumb {
   min-height: 100vh;
   display: flex;
   align-items: center;
-  padding-top: 140px;
+  padding-top: 120px;
   padding-bottom: 20px;
 }
 
@@ -654,6 +654,7 @@ pre {
 
 .project-grid {
   grid-template-columns: repeat(2, 1fr);
+  padding-bottom: 120px;
 }
 
 .project-card {
