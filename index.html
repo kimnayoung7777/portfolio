@@ -51,9 +51,12 @@
           <div class="hero-copy">
             <p class="eyebrow">Junior Backend Developer</p>
             <h1>
-              탄탄한 DB 설계와 안정적인 API로 확장 가능한 서버를 만드는 신입
-              백엔드 개발자 김나영입니다.
+              "안정적인 API와 확장 가능한 서버를 설계합니다."
             </h1>
+<h2>
+데이터의 흐름을 통제하는 신입 백엔드 개발자 김나영입니다.
+</h2>
+
             <p class="hero-description">
               7년간 장비 유지보수 시나리오를 기획하며 몸에 밴 '예방적 사고'를
               이제는 소프트웨어 아키텍처에 녹여냅니다. Java와 Spring Boot를
@@ -193,7 +196,9 @@
 
           <div class="project-grid">
             <article class="project-card">
-              <div class="project-image project-image-one"></div>
+              <div class="project-image">
+                <img src="images/greencarry-web.png" alt="GreenCarry_Project 썸네일" style="width: 100%; height:100%; object-fit:cover; ">
+              </div>
               <div class="project-body">
                 <h3>Green Carry</h3>
                 <p>
@@ -253,7 +258,7 @@
                 </div>
               </div>
             </article>
-
+        </div>
             
       <section id="contact" class="section contact-section">
         <div class="container">
@@ -265,24 +270,25 @@
           <div class="contact-card">
             <p>채용, 협업 관련 연락을 기다립니다.</p>
             <div class="contact-actions">
-  <button type="button" class="btn btn-primary" onclick="copyEmail()">Email 복사</button>
-  <a href="https://github.com/kimnayoung7777/" target="_blank" rel="noopener" class="btn btn-outline">GitHub</a>
-  <button type="button" class="btn btn-outline" onclick="showPhone()">전화번호 확인</button>
-</div>
+              <button type="button" class="btn btn-primary" onclick="copyEmail()">Email</button>
+              <a href="https://github.com/kimnayoung7777/" target="_blank" rel="noopener" class="btn btn-outline">GitHub</a>
+              <button type="button" class="btn btn-outline" onclick="showPhone()">Tel.</button>
+            </div>
 
-<div id="phoneOverlay" class="overlay" onclick="hidePhone()">
-  <div class="overlay-content">
-    <p>연락처</p>
-    <h3>010-1234-5678</h3>
-    <small>(클릭하여 닫기)</small>
-  </div>
-</div>
-
-<!-- 통합 토스트 메시지 -->
-<div id="toast" class="toast" onclick="hideToast()"></div>
+            <div id="phoneOverlay" class="card-overlay" onclick="hidePhone()">
+              <div class="overlay-content">
+                <p>김나영 연락처</p>
+                <h3>010-6417-8454</h3>
+                <small>(클릭하여 닫기)</small>
+              </div>
+            </div>
           </div>
-        </div>
+
       </section>
+
+      <div id="toast" class="toast" onclick="hideToast()"></div>
+
+
     </main>
 
     <footer class="footer">

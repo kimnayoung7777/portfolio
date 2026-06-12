@@ -249,9 +249,11 @@ p {
 h1 {
   max-width: 760px;
   margin: 0;
-  font-size: clamp(2.3rem, 6vw, 4.6rem);
-  line-height: 1.08;
-  letter-spacing: 0;
+  font-size: clamp(2rem, 5vw, 3rem);
+  line-height: 1.04;
+  letter-spacing: -0.01em;
+  word-break: keep-all;
+  margin-bottom: 10px;
 }
 
 h2 {
@@ -276,8 +278,14 @@ h3 {
 .project-actions,
 .contact-actions {
   display: flex;
+  align-items: center;
+  justify-content: center;
   flex-wrap: wrap;
   gap: 12px;
+}
+.contact-card p {
+  display: flex;
+  justify-content: center;
 }
 
 .hero-actions {
@@ -296,6 +304,8 @@ h3 {
   background: linear-gradient(135deg, var(--accent), var(--accent-strong));
   font-weight: 800;
   transition: 180ms ease;
+  font-family: inherit; /* 폰트 종류를 동일하게 맞춤 */
+  font-size: 1rem; /* 글씨 크기를 동일하게 맞춤 */
 }
 
 .btn:hover {
@@ -364,7 +374,7 @@ pre {
 }
 
 .section-heading {
-  max-width: 720px;
+  max-width: 900px;
   margin-bottom: 42px;
 }
 
@@ -616,6 +626,9 @@ body.dark-mode .project-image-four {
 
 .contact-card {
   padding: clamp(26px, 5vw, 48px);
+  width: 80%; /* 전체 너비의 80%만 차지하게 함 */
+  max-width: 600px; /* 아무리 커져도 600px을 넘지 않게 함 */
+  margin: 0 auto;
 }
 
 .contact-card p {
@@ -630,8 +643,8 @@ body.dark-mode .project-image-four {
 
 .footer-inner {
   display: flex;
+  justify-content: center;
   align-items: center;
-  justify-content: space-between;
   gap: 20px;
   min-height: 110px;
   color: var(--muted);
@@ -740,7 +753,56 @@ body.dark-mode .project-image-four {
 }
 
 /*추가*/
-/* 토스트 메시지 (우측 하단) */
+
+/* Contact 카드 내부를 기준점으로 설정 (매우 중요) */
+.contact-card {
+  position: relative;
+  overflow: hidden;
+}
+
+/* 카드 내부 전용 오버레이 */
+.card-overlay {
+  display: none; /* JS로 제어 (기본 숨김) */
+  position: absolute; /* contact-card 내부 기준으로 위치 지정 */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(4px);
+  z-index: 10;
+  cursor: pointer;
+
+  /* 내부 요소 중앙 정렬 */
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 오버레이 텍스트 스타일 */
+.overlay-content {
+  color: #ffffff;
+  text-align: center;
+}
+
+.overlay-content p {
+  margin: 0 0 5px 0 !important; /* 기존 p태그 마진 덮어쓰기 */
+  color: #cccccc !important;
+  font-size: 0.9rem;
+}
+
+.overlay-content h3 {
+  margin: 0 0 10px 0;
+  font-size: 1.8rem;
+  letter-spacing: 1px;
+}
+
+.overlay-content small {
+  color: #aaaaaa;
+  font-size: 0.8rem;
+}
+
+/* 우측 하단 고정 토스트 메시지 */
 .toast {
   visibility: hidden;
   position: fixed;
@@ -754,33 +816,7 @@ body.dark-mode .project-image-four {
   cursor: pointer;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
 }
+
 .toast.show {
   visibility: visible;
-}
-
-/* 전체 화면 오버레이 */
-.overlay {
-  display: none; /* JS에 의해 제어됨 */
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.85);
-  z-index: 9999;
-  cursor: pointer;
-
-  /* 요소들을 완벽하게 가운데로 정렬 */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.overlay-content {
-  color: white;
-  text-align: center;
-  /* 모달 내부가 너무 퍼지지 않게 제한 */
-  padding: 40px;
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 12px;
 }
