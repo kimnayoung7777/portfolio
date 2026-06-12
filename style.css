@@ -51,7 +51,9 @@ body {
   color: var(--text);
   background: var(--bg);
   line-height: 1.6;
-  transition: background 220ms ease, color 220ms ease;
+  transition:
+    background 220ms ease,
+    color 220ms ease;
 }
 
 a {
@@ -158,7 +160,9 @@ a {
   border-radius: 50%;
   background: #ffffff;
   box-shadow: 0 4px 12px rgba(36, 33, 55, 0.22);
-  transition: transform 180ms ease, background 180ms ease;
+  transition:
+    transform 180ms ease,
+    background 180ms ease;
 }
 
 body.dark-mode .theme-toggle-track {
@@ -252,7 +256,7 @@ h1 {
 
 h2 {
   margin: 0;
-  font-size: clamp(1.9rem, 4vw, 3rem);
+  font-size: clamp(1.7rem, 4vw, 2.5rem);
   line-height: 1.18;
 }
 
@@ -378,8 +382,16 @@ pre {
   border: 1px solid rgba(118, 215, 196, 0.55);
   border-radius: 8px;
   background:
-    linear-gradient(135deg, rgba(118, 215, 196, 0.28), rgba(249, 224, 118, 0.28)),
-    repeating-linear-gradient(45deg, rgba(52, 118, 105, 0.08) 0 10px, transparent 10px 20px);
+    linear-gradient(
+      135deg,
+      rgba(118, 215, 196, 0.28),
+      rgba(249, 224, 118, 0.28)
+    ),
+    repeating-linear-gradient(
+      45deg,
+      rgba(52, 118, 105, 0.08) 0 10px,
+      transparent 10px 20px
+    );
 }
 
 .profile-image span {
@@ -412,7 +424,10 @@ pre {
 .stack-card,
 .project-card,
 .contact-card {
-  transition: transform 180ms ease, border-color 180ms ease, background 180ms ease;
+  transition:
+    transform 180ms ease,
+    border-color 180ms ease,
+    background 180ms ease;
 }
 
 .strength-card:hover,
@@ -481,60 +496,106 @@ pre {
 
 .project-image-one {
   background:
-    linear-gradient(135deg, rgba(118, 215, 196, 0.76), rgba(249, 224, 118, 0.4)),
-    linear-gradient(45deg, #f5fffc 25%, #d7f5ef 25% 50%, #f5fffc 50% 75%, #d7f5ef 75%);
-  background-size: auto, 42px 42px;
+    linear-gradient(
+      135deg,
+      rgba(118, 215, 196, 0.76),
+      rgba(249, 224, 118, 0.4)
+    ),
+    linear-gradient(
+      45deg,
+      #f5fffc 25%,
+      #d7f5ef 25% 50%,
+      #f5fffc 50% 75%,
+      #d7f5ef 75%
+    );
+  background-size:
+    auto,
+    42px 42px;
 }
 
 .project-image-two {
   background:
-    radial-gradient(circle at 30% 35%, rgba(249, 224, 118, 0.72), transparent 20%),
-    radial-gradient(circle at 70% 55%, rgba(118, 215, 196, 0.72), transparent 22%),
+    radial-gradient(
+      circle at 30% 35%,
+      rgba(249, 224, 118, 0.72),
+      transparent 20%
+    ),
+    radial-gradient(
+      circle at 70% 55%,
+      rgba(118, 215, 196, 0.72),
+      transparent 22%
+    ),
     #f5fffc;
 }
 
 .project-image-three {
   background:
     linear-gradient(90deg, rgba(52, 118, 105, 0.14) 1px, transparent 1px),
-    linear-gradient(rgba(52, 118, 105, 0.14) 1px, transparent 1px),
-    #f5fffc;
+    linear-gradient(rgba(52, 118, 105, 0.14) 1px, transparent 1px), #f5fffc;
   background-size: 28px 28px;
 }
 
 .project-image-four {
   background:
-    linear-gradient(135deg, transparent 0 32%, rgba(249, 224, 118, 0.72) 32% 42%, transparent 42%),
-    linear-gradient(45deg, rgba(118, 215, 196, 0.72), transparent),
-    #f5fffc;
+    linear-gradient(
+      135deg,
+      transparent 0 32%,
+      rgba(249, 224, 118, 0.72) 32% 42%,
+      transparent 42%
+    ),
+    linear-gradient(45deg, rgba(118, 215, 196, 0.72), transparent), #f5fffc;
 }
 
 body.dark-mode .project-image-one {
   background:
-    linear-gradient(135deg, rgba(118, 215, 196, 0.34), rgba(249, 224, 118, 0.22)),
-    linear-gradient(45deg, #142b46 25%, #07111f 25% 50%, #142b46 50% 75%, #07111f 75%);
-  background-size: auto, 42px 42px;
+    linear-gradient(
+      135deg,
+      rgba(118, 215, 196, 0.34),
+      rgba(249, 224, 118, 0.22)
+    ),
+    linear-gradient(
+      45deg,
+      #142b46 25%,
+      #07111f 25% 50%,
+      #142b46 50% 75%,
+      #07111f 75%
+    );
+  background-size:
+    auto,
+    42px 42px;
 }
 
 body.dark-mode .project-image-two {
   background:
-    radial-gradient(circle at 30% 35%, rgba(249, 224, 118, 0.44), transparent 20%),
-    radial-gradient(circle at 70% 55%, rgba(118, 215, 196, 0.34), transparent 22%),
+    radial-gradient(
+      circle at 30% 35%,
+      rgba(249, 224, 118, 0.44),
+      transparent 20%
+    ),
+    radial-gradient(
+      circle at 70% 55%,
+      rgba(118, 215, 196, 0.34),
+      transparent 22%
+    ),
     #10233a;
 }
 
 body.dark-mode .project-image-three {
   background:
     linear-gradient(90deg, rgba(118, 215, 196, 0.12) 1px, transparent 1px),
-    linear-gradient(rgba(118, 215, 196, 0.12) 1px, transparent 1px),
-    #07111f;
+    linear-gradient(rgba(118, 215, 196, 0.12) 1px, transparent 1px), #07111f;
   background-size: 28px 28px;
 }
 
 body.dark-mode .project-image-four {
   background:
-    linear-gradient(135deg, transparent 0 32%, rgba(249, 224, 118, 0.48) 32% 42%, transparent 42%),
-    linear-gradient(45deg, rgba(118, 215, 196, 0.34), transparent),
-    #10233a;
+    linear-gradient(
+      135deg,
+      transparent 0 32%,
+      rgba(249, 224, 118, 0.48) 32% 42%,
+      transparent 42%
+    ),
+    linear-gradient(45deg, rgba(118, 215, 196, 0.34), transparent), #10233a;
 }
 
 .project-body {
@@ -673,8 +734,53 @@ body.dark-mode .project-image-four {
     width: 100%;
   }
 
-
   pre {
     padding: 20px;
   }
+}
+
+/*추가*/
+/* 토스트 메시지 (우측 하단) */
+.toast {
+  visibility: hidden;
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background-color: #333;
+  color: #fff;
+  padding: 15px 25px;
+  border-radius: 8px;
+  z-index: 9999;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+.toast.show {
+  visibility: visible;
+}
+
+/* 전체 화면 오버레이 */
+.overlay {
+  display: none; /* JS에 의해 제어됨 */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.85);
+  z-index: 9999;
+  cursor: pointer;
+
+  /* 요소들을 완벽하게 가운데로 정렬 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.overlay-content {
+  color: white;
+  text-align: center;
+  /* 모달 내부가 너무 퍼지지 않게 제한 */
+  padding: 40px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
 }

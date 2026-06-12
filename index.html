@@ -1,15 +1,15 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ko">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Backend Developer Portfolio</title>
+    <title>Backend Developer Portfolio | 김나영</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <header class="site-header">
       <nav class="navbar" aria-label="Main navigation">
-        <a href="#hero" class="logo">Backend.dev</a>
+        <a href="#hero" class="logo">Nayoung KIM.dev</a>
 
         <ul class="nav-menu">
           <li><a href="#hero" class="nav-link active">Home</a></li>
@@ -20,13 +20,23 @@
         </ul>
 
         <div class="nav-controls">
-          <button class="theme-toggle" type="button" aria-label="다크모드로 변경" aria-pressed="false">
+          <button
+            class="theme-toggle"
+            type="button"
+            aria-label="다크모드로 변경"
+            aria-pressed="false"
+          >
             <span class="theme-toggle-track" aria-hidden="true">
               <span class="theme-toggle-thumb"></span>
             </span>
           </button>
 
-          <button class="menu-toggle" type="button" aria-label="메뉴 열기" aria-expanded="false">
+          <button
+            class="menu-toggle"
+            type="button"
+            aria-label="메뉴 열기"
+            aria-expanded="false"
+          >
             <span></span>
             <span></span>
             <span></span>
@@ -40,10 +50,15 @@
         <div class="container hero-grid">
           <div class="hero-copy">
             <p class="eyebrow">Junior Backend Developer</p>
-            <h1>안정적인 API와 확장 가능한 서버를 만드는 신입 백엔드 개발자 김민준입니다.</h1>
+            <h1>
+              탄탄한 DB 설계와 안정적인 API로 확장 가능한 서버를 만드는 신입
+              백엔드 개발자 김나영입니다.
+            </h1>
             <p class="hero-description">
-              Java와 Spring을 중심으로 서비스 흐름을 이해하고, 데이터베이스 설계부터 배포 자동화까지
-              책임감 있게 완성하는 개발자를 지향합니다.
+              7년간 장비 유지보수 시나리오를 기획하며 몸에 밴 '예방적 사고'를
+              이제는 소프트웨어 아키텍처에 녹여냅니다. Java와 Spring Boot를
+              기반으로, 복잡한 비즈니스 로직 속에서도 데이터 무결성을 지키고
+              확장 가능한 견고한 서버를 구축하는 데 집중합니다.
             </p>
             <div class="hero-actions">
               <a href="#projects" class="btn btn-primary">View Projects</a>
@@ -59,10 +74,11 @@
                 <span></span>
               </div>
               <pre><code>const developer = {
-  name: "Kim Minjun",
+  name: "Kim Nayoung",
   role: "Backend Developer",
-  stack: ["Java", "Spring", "MySQL", "AWS"],
-  focus: "Reliable service architecture"
+  identity: "Preventive Design & Data-driven",
+  core_stack: ["Java", "Spring Boot", "MySQL", "MyBatis"],
+  focus: "Edge Case Handling & System Stability"
 };</code></pre>
             </div>
           </div>
@@ -73,39 +89,52 @@
         <div class="container">
           <div class="section-heading">
             <p class="eyebrow">About Me</p>
-            <h2>사용자 경험을 뒷받침하는 서버 개발자</h2>
+            <h2>기능 구현을 넘어, 안정적인 시스템을 고민합니다</h2>
           </div>
 
           <div class="about-grid">
             <div class="profile-card">
               <div class="profile-image" aria-label="프로필 이미지 영역">
-                <span>KMJ</span>
+                <span>KNY</span>
               </div>
-              <h3>김민준</h3>
+              <h3>김나영</h3>
               <p>Junior Backend Developer</p>
             </div>
 
             <div class="about-content">
               <p>
-                웹 서비스의 핵심 흐름을 이해하고, 명확한 API 설계와 안정적인 데이터 처리에 관심이 많습니다.
-                작은 기능도 요구사항, 예외 상황, 운영 환경을 함께 고려하며 완성도 있게 구현하려고 노력합니다.
+                단순히 코드를 작동시키는 것에 만족하지 않고, 아키텍처와 데이터
+                흐름 수준에서 오류를 예방하는 시스템 구축에 큰 가치를 둡니다. 팀
+                프로젝트를 수행하며 테이블 구조의 한계로 인한 쿼리 복잡도 증가를
+                직접 겪은 후, 확장성을 고려한 데이터 모델링의 중요성을 깊이
+                체감했습니다. 로그를 분석하고 공통 예외 처리를 규격화하여
+                유지보수하기 좋은 서버를 만드는 것을 지향합니다.
               </p>
 
               <div class="strength-list">
                 <article class="strength-card">
                   <span>01</span>
                   <h3>문제 분해</h3>
-                  <p>복잡한 요구사항을 작은 단위로 나누고 우선순위를 정해 구현합니다.</p>
+                  <p>
+                    복잡한 요구사항을 작은 단위로 나누고 우선순위를 정해
+                    구현합니다.
+                  </p>
                 </article>
                 <article class="strength-card">
                   <span>02</span>
-                  <h3>꾸준한 학습</h3>
-                  <p>Spring, DB, AWS를 프로젝트에 적용하며 실무 감각을 쌓고 있습니다.</p>
+                  <h3>데이터 정합성과 구조 최적화</h3>
+                  <p>
+                    정규화된 데이터베이스를 설계하고, 복잡도를 낮춘 효율적인
+                    데이터 접근 계층을 구축합니다.
+                  </p>
                 </article>
                 <article class="strength-card">
                   <span>03</span>
                   <h3>협업 중심</h3>
-                  <p>명확한 커밋, 이슈 정리, 문서화를 통해 팀원이 이해하기 쉬운 개발을 지향합니다.</p>
+                  <p>
+                    명확한 커밋, 이슈 정리, 문서화를 통해 팀원이 이해하기 쉬운
+                    개발을 지향합니다.
+                  </p>
                 </article>
               </div>
             </div>
@@ -124,25 +153,25 @@
             <article class="stack-card">
               <h3>Frontend</h3>
               <div class="tag-list">
-                <span>HTML</span><span>CSS</span><span>JS</span><span>jQuery</span><span>React</span>
+                <span>HTML</span><span>CSS</span><span>JS</span
+                ><span>jQuery</span><span>React</span>
               </div>
             </article>
             <article class="stack-card">
               <h3>Backend</h3>
               <div class="tag-list">
-                <span>Java</span><span>Spring</span>
+                <span>Java</span><span>Spring Boot</span><span>MyBatis</span>
               </div>
             </article>
             <article class="stack-card">
               <h3>Database</h3>
-              <div class="tag-list">
-                <span>MySQL</span><span>Oracle</span>
-              </div>
+              <div class="tag-list"><span>MySQL</span><span>Oracle</span></div>
             </article>
             <article class="stack-card">
               <h3>Infra</h3>
               <div class="tag-list">
-                <span>AWS EC2</span><span>S3</span><span>RDS</span><span>CloudFront</span>
+                <span>AWS EC2</span><span>S3</span><span>RDS</span
+                ><span>CloudFront</span>
               </div>
             </article>
             <article class="stack-card">
@@ -166,14 +195,30 @@
             <article class="project-card">
               <div class="project-image project-image-one"></div>
               <div class="project-body">
-                <h3>Study Mate</h3>
-                <p>스터디 모집, 일정 관리, 참여 신청 기능을 제공하는 커뮤니티 서비스입니다.</p>
+                <h3>Green Carry</h3>
+                <p>
+                  탄소 저감형 친환경 배달 플랫폼입니다. 사용자가 주문한 건에
+                  대해 탄소 배출 절감 수치를 체감하고 지속가능한 친환경 소비에
+                  동참하는 것을 목표로 개발했습니다.
+                </p>
                 <div class="tag-list">
-                  <span>Java</span><span>Spring</span><span>MySQL</span>
+                  <span>Java</span><span>Spring Boot</span><span>MyBatis</span
+                  ><span>Oracle</span><span>React</span>
                 </div>
                 <div class="project-actions">
-                  <a href="https://github.com/" target="_blank" rel="noopener" class="btn btn-small">GitHub</a>
-                  <a href="#" class="btn btn-small btn-outline">Live Demo</a>
+                  <a
+                    href="https://github.com/kimnayoung7777/GreenCarry_Project"
+                    target="_blank"
+                    rel="noopener"
+                    class="btn btn-small"
+                    >GitHub</a
+                  >
+                  <a
+                    href="https://greencarry.vercel.app/"
+                    target="_blank"
+                    class="btn btn-small btn-outline"
+                    >Live Demo</a
+                  >
                 </div>
               </div>
             </article>
@@ -181,65 +226,60 @@
             <article class="project-card">
               <div class="project-image project-image-two"></div>
               <div class="project-body">
-                <h3>Order API Server</h3>
-                <p>주문 생성, 결제 상태 관리, 관리자 조회 기능을 구현한 REST API 서버입니다.</p>
+                <h3>WeMove</h3>
+                <p>
+                  사용자 지역 기반 운동 모임 플랫폼입니다. 모임 생성 및 참가,
+                  참가자 승인 상태 관리, 채팅, 관리자 기능 등을 구현한 웹
+                  서비스입니다.
+                </p>
                 <div class="tag-list">
-                  <span>Spring Boot</span><span>JPA</span><span>Oracle</span>
+                  <span>Java</span><span>Spring Boot</span><span>MyBatis</span
+                  ><span>MySQL</span><span>Redis</span>
                 </div>
                 <div class="project-actions">
-                  <a href="https://github.com/" target="_blank" rel="noopener" class="btn btn-small">GitHub</a>
-                  <a href="#" class="btn btn-small btn-outline">Live Demo</a>
+                  <a
+                    href="https://github.com/kimnayoung7777/WeMove"
+                    target="_blank"
+                    rel="noopener"
+                    class="btn btn-small"
+                    >GitHub</a
+                  >
+                  <a
+                    href="https://wemove-web.vercel.app/"
+                    target="_blank"
+                    class="btn btn-small btn-outline"
+                    >Live Demo</a
+                  >
                 </div>
               </div>
             </article>
 
-            <article class="project-card">
-              <div class="project-image project-image-three"></div>
-              <div class="project-body">
-                <h3>Cloud File Box</h3>
-                <p>AWS S3를 활용해 파일 업로드, 다운로드, 권한 관리를 제공하는 서비스입니다.</p>
-                <div class="tag-list">
-                  <span>AWS S3</span><span>EC2</span><span>RDS</span>
-                </div>
-                <div class="project-actions">
-                  <a href="https://github.com/" target="_blank" rel="noopener" class="btn btn-small">GitHub</a>
-                  <a href="#" class="btn btn-small btn-outline">Live Demo</a>
-                </div>
-              </div>
-            </article>
-
-            <article class="project-card">
-              <div class="project-image project-image-four"></div>
-              <div class="project-body">
-                <h3>Deploy Pipeline</h3>
-                <p>Docker와 GitHub Actions로 빌드, 테스트, 배포를 자동화한 CI/CD 실습 프로젝트입니다.</p>
-                <div class="tag-list">
-                  <span>Docker</span><span>GitHub Actions</span><span>AWS</span>
-                </div>
-                <div class="project-actions">
-                  <a href="https://github.com/" target="_blank" rel="noopener" class="btn btn-small">GitHub</a>
-                  <a href="#" class="btn btn-small btn-outline">Live Demo</a>
-                </div>
-              </div>
-            </article>
-          </div>
-        </div>
-      </section>
-
+            
       <section id="contact" class="section contact-section">
         <div class="container">
           <div class="section-heading">
             <p class="eyebrow">Contact</p>
-            <h2>함께 성장할 팀을 찾고 있습니다</h2>
+            <h2>견고한 시스템을 만들어가며 함께 성장하고 싶습니다.</h2>
           </div>
 
           <div class="contact-card">
-            <p>프로젝트, 채용, 협업 관련 연락을 기다립니다.</p>
+            <p>채용, 협업 관련 연락을 기다립니다.</p>
             <div class="contact-actions">
-              <a href="mailto:minjun.backend@example.com" class="btn btn-primary">Email</a>
-              <a href="https://github.com/" target="_blank" rel="noopener" class="btn btn-outline">GitHub</a>
-              <a href="https://open.kakao.com/" target="_blank" rel="noopener" class="btn btn-outline">Kakao Open Chat</a>
-            </div>
+  <button type="button" class="btn btn-primary" onclick="copyEmail()">Email 복사</button>
+  <a href="https://github.com/kimnayoung7777/" target="_blank" rel="noopener" class="btn btn-outline">GitHub</a>
+  <button type="button" class="btn btn-outline" onclick="showPhone()">전화번호 확인</button>
+</div>
+
+<div id="phoneOverlay" class="overlay" onclick="hidePhone()">
+  <div class="overlay-content">
+    <p>연락처</p>
+    <h3>010-1234-5678</h3>
+    <small>(클릭하여 닫기)</small>
+  </div>
+</div>
+
+<!-- 통합 토스트 메시지 -->
+<div id="toast" class="toast" onclick="hideToast()"></div>
           </div>
         </div>
       </section>
@@ -247,11 +287,7 @@
 
     <footer class="footer">
       <div class="container footer-inner">
-        <p>김민준</p>
-        <p>Copyright 2026. Kim Minjun. All rights reserved.</p>
-        <div class="footer-links">
-          <a href="https://github.com/" target="_blank" rel="noopener">GitHub</a>
-          <a href="#" target="_blank" rel="noopener">Blog</a>
+        <p>Copyright 2026. Kim Nayoung. All rights reserved.</p>
         </div>
       </div>
     </footer>
