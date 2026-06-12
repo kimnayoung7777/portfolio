@@ -224,6 +224,14 @@ body.dark-mode .theme-toggle-thumb {
   margin: 0 auto;
 }
 
+.about-intro {
+  max-width: 1120px;
+  margin-top: 24px;
+  color: var(--muted);
+  font-size: 1.08rem;
+  line-height: 1.7;
+}
+
 .hero-grid,
 .about-grid {
   display: grid;
@@ -381,6 +389,10 @@ pre {
 }
 
 .profile-card {
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+  height: fit-content;
   padding: 28px;
   text-align: center;
 }
@@ -390,7 +402,7 @@ pre {
   place-items: center;
   width: min(100%, 280px);
   aspect-ratio: 1;
-  margin: 0 auto 24px;
+  margin: 24px;
   border: 1px solid rgba(118, 215, 196, 0.55);
   border-radius: 8px;
   background:
@@ -404,6 +416,10 @@ pre {
       rgba(52, 118, 105, 0.08) 0 10px,
       transparent 10px 20px
     );
+}
+.profile-image-name {
+  margin-top: 24px;
+  padding-top: 24px;
 }
 
 /* ?�네??컨테?�너 ?�이 지??*/
@@ -426,6 +442,14 @@ pre {
   font-weight: 900;
   color: var(--text);
 }
+.strength-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.strength-card {
+  height: auto;
+}
 
 .profile-card p,
 .about-content p,
@@ -435,7 +459,6 @@ pre {
   color: var(--muted);
 }
 
-.strength-list,
 .stack-grid,
 .project-grid {
   display: grid;
@@ -444,7 +467,6 @@ pre {
 
 .strength-list {
   grid-template-columns: repeat(3, 1fr);
-  margin-top: 28px;
 }
 
 .strength-card,
@@ -776,10 +798,6 @@ body.dark-mode .project-image {
 
   .stack-grid {
     grid-template-columns: repeat(2, 1fr);
-  }
-
-  .strength-list {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }
 
