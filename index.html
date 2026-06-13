@@ -89,64 +89,80 @@
       </section>
 
       <section id="about" class="section">
-        <div class="container">
-          <div class="section-heading">
-            <p class="eyebrow">About Me</p>
-            <h2>기능 구현을 넘어, 안정적인 시스템을 고민합니다.</h2>
-
-            <div class="about-intro">
-              <p>
-                단순히 코드를 작동시키는 것에 만족하지 않고, 아키텍처와 데이터
-                흐름 수준에서 오류를 예방하는 시스템 구축에 큰 가치를 둡니다. 팀
-                프로젝트를 수행하며 테이블 구조의 한계로 인한 쿼리 복잡도 증가를
-                직접 겪은 후, 확장성을 고려한 데이터 모델링의 중요성을 깊이
-                체감했습니다. 로그를 분석하고 공통 예외 처리를 규격화하여
-                유지보수하기 좋은 서버를 만드는 것을 지향합니다.
-              </p>
+        <div class="container notion-container">
+          
+          <!-- [첫 번째 줄] 프로필 이미지 & 자기소개 박스 -->
+          <div class="notion-row">
+            <aside class="notion-sidebar">
+              <img src="images/profile.png" alt="김나영 프로필" class="notion-profile-img">
+            </aside>
+            
+            <div class="notion-main-content">
+              <div class="notion-callout">
+                <div class="callout-text">
+                  <p><strong>기계시스템 공학과</strong>를 전공하며 아이디어를 도면에 설계하고 실제 동작하는 결과물을 만들어내는 방법을 배웠습니다. 졸업 프로젝트로 '장갑형 마우스'를 설계하고 특허 출원까지 경험하며, 사용자 관점에서 문제를 분석하고 해결하는 엔지니어링의 본질을 깨달았습니다.</p>
+                  <p><strong>졸업 후</strong>에는 기계 관련 회사에서 장비의 워크플로우를 관리하며, 복잡한 문제를 구조적으로 해결하는 법을 익혔습니다. 하드웨어와 소프트웨어, 사용하는 도구는 다르지만 결국 제 본질은 같습니다. 사용자의 불편함을 포착해 시스템을 설계하고, 끝내 결과물을 구현해내는 것.</p>
+                  <p><strong>이제는</strong> 기계공학 전공과 현장의 실무에서 다져온 엔지니어링 마인드를 밑거름 삼아, 소프트웨어를 통해 더 확장성 있는 가치를 만들어가고자 합니다.</p>
+                </div>
+              </div>
             </div>
           </div>
 
-          <div class="about-grid">
-            <div class="profile-card">
-              <div class="profile-image" aria-label="프로필 이미지 영역">
-                <span>KNY</span>
+          <!-- [두 번째 줄] 취미/자격증 & 경력/학력 사항 -->
+          <div class="notion-row">
+            <aside class="notion-sidebar">
+              <div class="notion-section">
+                <h3 class="notion-heading">자격증</h3>
+                <ul class="notion-list">
+                  <li>🚗 2종 보통 운전 면허</li>
+                  <li>📐 기계 설계 산업 기사</li>
+                  <li>⚙️ 3D프린터운용기술자격 2급</li>
+                </ul>
               </div>
-              <div class="profile-image-name">
-                <h3>김나영</h3>
-              <p>Junior Backend Developer</p>
+
+              <div class="notion-section">
+                <h3 class="notion-heading">취미 활동</h3>
+                <ul class="notion-list">
+                  <li>🏋️ 웨이트 트레이닝</li>
+                  <li>🏃 러닝</li>
+                  <li>🥁 드럼 연주</li>
+                </ul>
               </div>
               
-            </div>
+            </aside>
 
-            <div class="about-content">
-              <div class="strength-list">
-                <article class="strength-card">
-                  <span>01</span>
-                  <h3>문제 분해</h3>
-                  <p>
-                    복잡한 요구사항을 작은 단위로 나누고 우선순위를 정해
-                    구현합니다.
-                  </p>
-                </article>
-                <article class="strength-card">
-                  <span>02</span>
-                  <h3>데이터 정합성과 구조 최적화</h3>
-                  <p>
-                    정규화된 데이터베이스를 설계하고, 복잡도를 낮춘 효율적인
-                    데이터 접근 계층을 구축합니다.
-                  </p>
-                </article>
-                <article class="strength-card">
-                  <span>03</span>
-                  <h3>협업 중심</h3>
-                  <p>
-                    명확한 커밋, 이슈 정리, 문서화를 통해 팀원이 이해하기 쉬운
-                    개발을 지향합니다.
-                  </p>
-                </article>
+            <div class="notion-main-content">
+              <!-- 시작 높이를 맞추기 위해 inline 스타일 추가 -->
+              <h2 class="notion-main-heading" style="margin-top: 0;">경력 및 학력 사항</h2>
+              
+              <div class="notion-timeline">
+                <div class="timeline-item">
+                  <div class="timeline-icon">📚</div>
+                  <div class="timeline-info">
+                    <h4>KH정보교육원 - 풀스택 웹 개발자 양성 과정 (이수중)</h4>
+                    <span class="timeline-date">2025년 12월 ~ 2026년 6월</span>
+                  </div>
+                </div>
+                
+                <div class="timeline-item">
+                  <div class="timeline-icon">💼</div>
+                  <div class="timeline-info">
+                    <h4>(주)원인터시스템 기술 지원팀 대리</h4>
+                    <span class="timeline-date">2018년 9월 ~ 2025년 4월</span>
+                  </div>
+                </div>
+                
+                <div class="timeline-item">
+                  <div class="timeline-icon">🎓</div>
+                  <div class="timeline-info">
+                    <h4>금오공과대학교 기계시스템공학과 학사</h4>
+                    <span class="timeline-date">2011년 3월 ~ 2016년 8월</span>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
+
         </div>
       </section>
 
@@ -167,9 +183,9 @@
                   <div class="skill-item">
                     <span class="skill-name">HTML</span>
                     <div class="progress-bg">
-                      <div class="progress-fill" style="width: 80%;"></div>
+                      <div class="progress-fill" style="width: 75%;"></div>
                     </div>
-                    <span class="skill-percent">80%</span>
+                    <span class="skill-percent">75%</span>
                   </div>
                   <div class="skill-item">
                     <span class="skill-name">CSS</span>
@@ -188,9 +204,9 @@
                   <div class="skill-item">
                     <span class="skill-name">React</span>
                     <div class="progress-bg">
-                      <div class="progress-fill" style="width: 80%;"></div>
+                      <div class="progress-fill" style="width: 75%;"></div>
                     </div>
-                    <span class="skill-percent">80%</span>
+                    <span class="skill-percent">75%</span>
                   </div>
                 </div>
               </div>
@@ -201,23 +217,23 @@
                   <div class="skill-item">
                     <span class="skill-name">Java</span>
                     <div class="progress-bg">
-                      <div class="progress-fill" style="width: 80%;"></div>
+                      <div class="progress-fill" style="width: 85%;"></div>
                     </div>
-                    <span class="skill-percent">80%</span>
+                    <span class="skill-percent">85%</span>
                   </div>
                   <div class="skill-item">
                     <span class="skill-name">Spring Boot</span>
                     <div class="progress-bg">
-                      <div class="progress-fill" style="width: 80%;"></div>
+                      <div class="progress-fill" style="width: 85%;"></div>
                     </div>
-                    <span class="skill-percent">80%</span>
+                    <span class="skill-percent">85%</span>
                   </div>
                   <div class="skill-item">
                     <span class="skill-name">MyBatis</span>
                     <div class="progress-bg">
-                      <div class="progress-fill" style="width: 80%;"></div>
+                      <div class="progress-fill" style="width: 85%;"></div>
                     </div>
-                    <span class="skill-percent">80%</span>
+                    <span class="skill-percent">85%</span>
                   </div>
                 </div>
               </div>
@@ -232,9 +248,9 @@
                   <div class="skill-item">
                     <span class="skill-name">MySQL</span>
                     <div class="progress-bg">
-                      <div class="progress-fill" style="width: 80%;"></div>
+                      <div class="progress-fill" style="width: 85%;"></div>
                     </div>
-                    <span class="skill-percent">80%</span>
+                    <span class="skill-percent">85%</span>
                   </div>
                   <div class="skill-item">
                     <span class="skill-name">Oracle</span>
@@ -252,23 +268,23 @@
                   <div class="skill-item">
                     <span class="skill-name">AWS</span>
                     <div class="progress-bg">
-                      <div class="progress-fill" style="width: 80%;"></div>
+                      <div class="progress-fill" style="width: 75%;"></div>
                     </div>
-                    <span class="skill-percent">80%</span>
+                    <span class="skill-percent">75%</span>
                   </div>
                   <div class="skill-item">
                     <span class="skill-name">Docker</span>
                     <div class="progress-bg">
-                      <div class="progress-fill" style="width: 80%;"></div>
+                      <div class="progress-fill" style="width: 75%;"></div>
                     </div>
-                    <span class="skill-percent">80%</span>
+                    <span class="skill-percent">75%</span>
                   </div>
                   <div class="skill-item">
                     <span class="skill-name long-text">GitHub Actions</span>
                     <div class="progress-bg">
-                      <div class="progress-fill" style="width: 80%;"></div>
+                      <div class="progress-fill" style="width: 75%;"></div>
                     </div>
-                    <span class="skill-percent">80%</span>
+                    <span class="skill-percent">75%</span>
                   </div>
                 </div>
               </div>
