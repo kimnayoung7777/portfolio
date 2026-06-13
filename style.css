@@ -293,6 +293,7 @@ h3 {
   flex-wrap: wrap;
   gap: 12px;
 }
+
 .contact-card p {
   display: flex;
   justify-content: center;
@@ -314,8 +315,8 @@ h3 {
   background: linear-gradient(135deg, var(--accent), var(--accent-strong));
   font-weight: 800;
   transition: 180ms ease;
-  font-family: inherit; /* ?�트 종류�??�일?�게 맞춤 */
-  font-size: 1rem; /* 글???�기�??�일?�게 맞춤 */
+  font-family: inherit;
+  font-size: 1rem;
 }
 
 .btn:hover {
@@ -417,19 +418,18 @@ pre {
       transparent 10px 20px
     );
 }
+
 .profile-image-name {
   margin-top: 24px;
   padding-top: 24px;
 }
 
-/* ?�네??컨테?�너 ?�이 지??*/
 .project-thumbnail {
-  height: 330px; /* ?�하???�이�?조절?�세??*/
-  overflow: hidden; /* ?�역??벗어?�는 ?��?지 부�??��? */
+  height: 330px;
+  overflow: hidden;
   flex-shrink: 0;
 }
 
-/* ?��?지 ?��???*/
 .project-thumbnail img {
   width: 100%;
   height: 100%;
@@ -442,11 +442,13 @@ pre {
   font-weight: 900;
   color: var(--text);
 }
+
 .strength-list {
   display: flex;
   flex-direction: column;
   gap: 20px;
 }
+
 .strength-card {
   height: auto;
 }
@@ -537,121 +539,37 @@ pre {
   font-size: 1rem;
 }
 
-.skill-list {
+/* 새로 바뀐 스킬 태그 스타일 */
+.skill-tags {
   display: flex;
-  flex-direction: column;
-  gap: 14px;
+  flex-wrap: wrap;
+  gap: 10px;
 }
 
-.skill-item {
-  position: relative;
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  width: 100%;
-  min-width: 0;
-}
-
-.skill-name {
-  display: inline-flex;
-  flex: 0 0 100px;
-  align-items: center;
-  justify-content: center;
-  min-height: 34px;
-  max-width: 130px;
-  padding: 7px 13px;
-  border: 1px solid rgba(118, 215, 196, 0.34);
-  border-radius: 999px;
-  color: var(--text);
-  background: rgba(118, 215, 196, 0.14);
-  font-size: clamp(0.78rem, 0.95vw, 0.9rem);
-  font-weight: 700;
-  line-height: 1.15;
-  text-align: center;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-.skill-name.long-text {
-  font-size: 0.72rem !important; /* 긴 글자는 조금 더 작게 */
-}
-
-.progress-bg {
-  flex: 1 1 0;
-  min-width: 20px;
-  height: 7px;
-  overflow: hidden;
-  border-radius: 999px;
-  background: rgba(105, 122, 118, 0.16);
-}
-
-.progress-fill {
-  height: 100%;
-  border-radius: inherit;
-  background: var(--skill-color, var(--base-strong));
-}
-
-.skill-percent {
-  position: absolute;
-  right: 0;
-  top: 50%;
+.skill-tag {
+  padding: 6px 14px;
+  border-radius: 6px;
+  background: rgba(105, 122, 118, 0.1);
   color: var(--muted);
-  font-size: 0.84rem;
-  font-weight: 800;
-  text-align: right;
-  padding: 2px 0 2px 8px;
-  background: var(--card-bg);
-  pointer-events: none;
-  opacity: 0;
-  transform: translate(8px, -50%);
-  transition:
-    opacity 180ms ease,
-    transform 180ms ease;
+  font-size: 0.88rem;
+  font-weight: 600;
+  transition: all 0.2s ease;
+  border: 1px solid transparent;
 }
 
-.skill-item:hover .skill-percent {
-  opacity: 1;
-  transform: translate(0, -50%);
+.skill-tag:hover {
+  background: rgba(105, 122, 118, 0.2);
 }
 
-.stack-frontend {
-  --skill-color: #a3e4d7;
+/* 주력 기술 강조 (main) */
+.skill-tag.main {
+  background: rgba(118, 215, 196, 0.15);
+  color: var(--base-strong);
+  border: 1px solid rgba(118, 215, 196, 0.3);
 }
 
-.stack-backend {
-  --skill-color: #aed6f1;
-}
-
-.stack-database {
-  --skill-color: #d2b4de;
-}
-
-.stack-infra {
-  --skill-color: #f5cba7;
-}
-
-.stack-infra-devops {
-  --skill-color: linear-gradient(90deg, #f5cba7, #f5b7b1);
-}
-
-.stack-frontend .skill-name {
-  background: rgba(163, 228, 215, 0.22);
-}
-
-.stack-backend .skill-name {
-  background: rgba(174, 214, 241, 0.24);
-}
-
-.stack-database .skill-name {
-  background: rgba(210, 180, 222, 0.24);
-}
-
-.stack-infra .skill-name {
-  background: rgba(245, 203, 167, 0.24);
-}
-
-.stack-infra-devops .skill-name {
-  background: rgba(245, 203, 167, 0.24);
+body.dark-mode .skill-tag.main {
+  background: rgba(118, 215, 196, 0.1);
 }
 
 .tag-list {
@@ -732,6 +650,7 @@ body.dark-mode .project-image {
   flex-direction: column;
   height: 100%;
 }
+
 .project-body h3 {
   flex-shrink: 0;
 }
@@ -752,9 +671,11 @@ body.dark-mode .project-image {
 }
 
 .contact-card {
+  position: relative;
+  overflow: hidden;
   padding: clamp(26px, 5vw, 48px);
-  width: 80%; /* ?�체 ?�비??80%�?차�??�게 ??*/
-  max-width: 600px; /* ?�무�?커져??600px???��? ?�게 ??*/
+  width: 80%;
+  max-width: 600px;
   margin: 0 auto;
 }
 
@@ -789,6 +710,10 @@ body.dark-mode .project-image {
 .footer-links a:hover {
   color: var(--base-strong);
 }
+
+/* =========================================
+   반응형 (Media Queries)
+   ========================================= */
 
 @media (max-width: 1024px) {
   .hero-grid,
@@ -857,103 +782,6 @@ body.dark-mode .project-image {
     padding: 24px;
   }
 
-  .skill-item {
-    flex-direction: column;
-    align-items: stretch;
-    gap: 10px;
-    width: 100%;
-  }
-
-  .skill-name {
-    flex: 0 0 auto;
-    width: 100%;
-    max-width: none;
-    padding: 7px 13px;
-    background: rgba(118, 215, 196, 0.14);
-    font-size: 0.85rem;
-  }
-
-  .stack-frontend .skill-name {
-    background: rgba(163, 228, 215, 0.22);
-  }
-
-  .stack-backend .skill-name {
-    background: rgba(174, 214, 241, 0.24);
-  }
-
-  .stack-database .skill-name {
-    background: rgba(210, 180, 222, 0.24);
-  }
-
-  .stack-infra-devops .skill-name {
-    background: rgba(245, 203, 167, 0.24);
-  }
-
-  .progress-bg {
-    flex: 0 0 auto;
-    width: 100%;
-    min-width: 0;
-    height: 8px;
-    border-radius: 999px;
-    background: rgba(105, 122, 118, 0.16);
-    position: static;
-  }
-
-  .skill-percent {
-    right: 0;
-    top: auto;
-    bottom: 0;
-    font-size: 0.76rem;
-    transform: translateX(8px);
-    transition:
-      opacity 180ms ease,
-      transform 180ms ease;
-  }
-
-  .skill-item:hover .skill-percent {
-    opacity: 1;
-    transform: translateX(0);
-  }
-
-  .skill-item {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 8px;
-    width: 100%;
-    position: relative; /* 퍼센트 텍스트의 기준점 역할 */
-  }
-
-  .skill-name {
-    flex: 0 0 auto;
-    width: fit-content; /* 100%가 아니라 배지처럼 글자 크기만큼만 차지하게 변경 */
-    max-width: 100%;
-    padding: 6px 14px;
-    font-size: 0.85rem;
-  }
-
-  .progress-bg {
-    flex: 0 0 auto;
-    width: 100%; /* 바는 아래쪽에서 카드를 꽉 채움 */
-    height: 8px;
-    border-radius: 999px;
-    background: rgba(105, 122, 118, 0.16);
-    position: static;
-  }
-
-  .skill-percent {
-    position: absolute;
-    top: 5px; /* 이름표와 같은 줄에 예쁘게 배치 */
-    right: 0; /* 우측 끝에 딱 맞춤 (화면 안 뚫고 나감) */
-    bottom: auto;
-    transform: none; /* 튀어나감의 주범 제거! */
-    font-size: 0.8rem;
-    background: transparent;
-  }
-
-  .skill-item:hover .skill-percent {
-    transform: none; /* 호버 시에도 움직이지 않고 스르륵 나타나기만 함 */
-    opacity: 1;
-  }
   .footer-inner {
     flex-direction: column;
     justify-content: center;
@@ -977,18 +805,10 @@ body.dark-mode .project-image {
   }
 }
 
-/*추�?*/
-
-/* Contact 카드 ?��?�?기�??�으�??�정 (매우 중요) */
-.contact-card {
-  position: relative;
-  overflow: hidden;
-}
-
-/* 카드 ?��? ?�용 ?�버?�이 */
+/* Contact 카드 오버레이 */
 .card-overlay {
-  display: none; /* JS�??�어 (기본 ?��?) */
-  position: absolute; /* contact-card ?��? 기�??�로 ?�치 지??*/
+  display: none;
+  position: absolute;
   top: 0;
   left: 0;
   width: 100%;
@@ -997,21 +817,18 @@ body.dark-mode .project-image {
   backdrop-filter: blur(4px);
   z-index: 10;
   cursor: pointer;
-
-  /* ?��? ?�소 중앙 ?�렬 */
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
 
-/* ?�버?�이 ?�스???��???*/
 .overlay-content {
   color: #ffffff;
   text-align: center;
 }
 
 .overlay-content p {
-  margin: 0 0 5px 0 !important; /* 기존 p?�그 마진 ??��?�기 */
+  margin: 0 0 5px 0 !important;
   color: #cccccc !important;
   font-size: 0.9rem;
 }
@@ -1027,7 +844,6 @@ body.dark-mode .project-image {
   font-size: 0.8rem;
 }
 
-/* ?�측 ?�단 고정 ?�스??메시지 */
 .toast {
   visibility: hidden;
   position: fixed;
@@ -1046,28 +862,23 @@ body.dark-mode .project-image {
   visibility: visible;
 }
 
-/*어바웃미 수정*/
-/* =========================================
-   About Me - Notion Style Layout
-   ========================================= */
 /* =========================================
    About Me - Notion Style Layout
    ========================================= */
 .notion-container {
   display: flex;
   flex-direction: column;
-  gap: 50px; /* 윗줄(사진)과 아랫줄(경력) 사이의 세로 간격 */
+  gap: 50px;
   max-width: 1100px;
   margin: 0 auto;
 }
 
 .notion-row {
   display: flex;
-  gap: 50px; /* 왼쪽 사이드바와 오른쪽 콘텐츠 사이의 가로 간격 */
+  gap: 50px;
   align-items: stretch;
 }
 
-/* 좌측 사이드바 영역 */
 .notion-sidebar {
   flex: 0 0 280px;
   display: flex;
@@ -1110,7 +921,6 @@ body.dark-mode .project-image {
   line-height: 1.4;
 }
 
-/* 우측 메인 콘텐츠 영역 */
 .notion-main-content {
   flex: 1;
   display: flex;
@@ -1118,7 +928,6 @@ body.dark-mode .project-image {
   gap: 45px;
 }
 
-/* 노션 콜아웃(박스) 스타일 */
 .notion-callout {
   display: flex;
   gap: 18px;
@@ -1130,10 +939,8 @@ body.dark-mode .project-image {
   line-height: 1.7;
   color: #37352f;
   font-size: 1rem;
-
-  /* 👇 바로 이 부분만 추가하세요! 👇 */
   height: 100%;
-  box-sizing: border-box; /* 패딩을 포함해서 100%로 계산하도록 함 */
+  box-sizing: border-box;
 }
 
 .callout-text {
@@ -1156,7 +963,6 @@ body.dark-mode .project-image {
   border-bottom: 2px solid rgba(249, 224, 118, 0.75);
 }
 
-/* 경력 및 학력 사항 타이틀 */
 .notion-main-heading {
   font-size: 1.8rem;
   font-weight: 700;
@@ -1166,7 +972,6 @@ body.dark-mode .project-image {
   border-bottom: 1px solid #eaeaea;
 }
 
-/* 타임라인 (리스트형) 스타일 */
 .notion-timeline {
   display: flex;
   flex-direction: column;
@@ -1203,7 +1008,6 @@ body.dark-mode .project-image {
   color: #787774;
 }
 
-/* 모바일 반응형 처리 */
 @media (max-width: 860px) {
   .notion-row {
     flex-direction: column;
