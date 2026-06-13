@@ -96,3 +96,53 @@ function hidePhone() {
   const overlay = document.getElementById("phoneOverlay");
   if (overlay) overlay.style.display = "none";
 }
+
+// 터미널 커밋 메시지 롤링 효과
+document.addEventListener("DOMContentLoaded", function () {
+  const commitElement = document.getElementById("commit-text");
+
+  if (commitElement) {
+    // 실제 고민하고 해결했던 개발 태스크 위주의 커밋 메시지 배열
+    const commits = [
+      "feat: Optimize MyBatis aggregation queries",
+      "chore: Configure Docker named volumes for deploy",
+      "refactor: Expand DB tables to optimize complexity",
+      "feat: Implement GreenCarry carbon calculator",
+      "feat: Build multi-role logic for Admin and Owner",
+      "feat: Implement WeMove user matching workflow",
+    ];
+
+    let currentIndex = 0;
+
+    setInterval(() => {
+      currentIndex = (currentIndex + 1) % commits.length;
+
+      // 글자 바뀔 때 부드럽게 깜빡이는 효과만 부여 (정적인 틀 유지)
+      commitElement.style.opacity = 0;
+
+      setTimeout(() => {
+        commitElement.textContent = commits[currentIndex];
+        commitElement.style.opacity = 1;
+      }, 300);
+    }, 3000);
+  }
+});
+// 스크롤 감지 및 Top 버튼 제어
+const topBtn = document.getElementById("scrollToTopBtn");
+
+window.addEventListener("scroll", () => {
+  // 스크롤을 300px 이상 내렸을 때 버튼 노출
+  if (window.scrollY > 300) {
+    topBtn.classList.add("show");
+  } else {
+    topBtn.classList.remove("show");
+  }
+});
+
+// 버튼 클릭 시 최상단 이동
+topBtn.addEventListener("click", () => {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth",
+  });
+});

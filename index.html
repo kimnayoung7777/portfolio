@@ -50,19 +50,14 @@
         <div class="container hero-grid">
           <div class="hero-copy">
             <p class="eyebrow">Junior Backend Developer</p>
-            <h1>
-              "안정적인 API와 확장 가능한 서버를 설계합니다."
-            </h1>
-<h2>
-데이터의 흐름을 통제하는 신입 백엔드 개발자 김나영입니다.
-</h2>
+           <h1>
+    "기계공학 전공자가 <br>
+    <span class="highlight">왜 백엔드 개발자</span>가 되었을까요?"
+  </h1>
+  <p class="hero-description" style="font-size: 1.2rem; font-weight: 500; color: var(--text);">
+    그 답을 이 포트폴리오에 담았습니다.
+  </p>
 
-            <p class="hero-description">
-              7년간 장비 유지보수 시나리오를 기획하며 몸에 밴 '예방적 사고'를
-              이제는 소프트웨어 아키텍처에 녹여냅니다. Java와 Spring Boot를
-              기반으로, 복잡한 비즈니스 로직 속에서도 데이터 무결성을 지키고
-              확장 가능한 견고한 서버를 구축하는 데 집중합니다.
-            </p>
             <div class="hero-actions">
               <a href="#projects" class="btn btn-primary">View Projects</a>
               <a href="#contact" class="btn btn-outline">Contact</a>
@@ -76,13 +71,14 @@
                 <span></span>
                 <span></span>
               </div>
-              <pre><code>const developer = {
-  name: "Kim Nayoung",
-  role: "Backend Developer",
-  identity: "Preventive Design & Data-driven",
-  core_stack: ["Java", "Spring Boot", "MySQL", "MyBatis"],
-  focus: "Edge Case Handling & System Stability"
-};</code></pre>
+              <pre><code>const kimNayoung = {
+  role: "Junior Backend Developer",
+  core: ["Java", "Spring Boot", "Architecture"],
+  focus: "System Stability",
+  current_project: "WeMove (Latest)",
+  latest_commit: "<span id="commit-text">feat: Optimize MyBatis queries</span>",
+  status: "Looking for new opportunities"
+};<span class="cursor"></span></code></pre>
             </div>
           </div>
         </div>
@@ -229,50 +225,22 @@
           </div>
 
           <div class="project-grid">
-            <article class="project-card">
-              <div class="project-image project-thumbnail">
-                <img src="images/greencarry-web.png" alt="GreenCarry_Project 썸네일" style="width: 100%; height:100%; object-fit:cover; ">
-              </div>
-              <div class="project-body">
-                <h3>Green Carry</h3>
-                <p>
-                  탄소 저감형 친환경 배달 플랫폼입니다. 사용자가 주문한 건에
-                  대해 탄소 배출 절감 수치를 체감하고 지속가능한 친환경 소비에
-                  동참하는 것을 목표로 개발했습니다.
-                </p>
-                <div class="tag-list">
-                  <span>Java</span><span>Spring Boot</span><span>MyBatis</span
-                  ><span>React</span><span>Oracle</span>
-                </div>
-                <div class="project-actions">
-                  <a
-                    href="https://github.com/kimnayoung7777/GreenCarry_Project"
-                    target="_blank"
-                    rel="noopener"
-                    class="btn btn-small"
-                    >GitHub</a
-                  >
-                  <a
-                    href="https://greencarry.vercel.app/"
-                    target="_blank"
-                    class="btn btn-small btn-outline"
-                    >Live Demo</a
-                  >
-                </div>
-              </div>
-            </article>
-
+            
             <article class="project-card">
               <div class="project-image project-thumbnail">
                 <img src="images/wemove-web.png" alt="WeMove_Project 썸네일">
               </div>
               <div class="project-body">
                 <h3>WeMove</h3>
+                <p class="project-duration">⏱ 2026.05.15 ~ 2026.06.09 (약 3주)</p>
                 <p>
                   사용자 지역 기반 운동 모임 플랫폼입니다. 모임 생성 및 참가,
                   참가자 승인 상태 관리, 채팅, 관리자 기능 등을 구현한 웹
                   서비스입니다.
                 </p>
+                <div class="api-list">
+                  <span>API: Kakao Map, Toss Payments, Gmail SMTP</span>
+                </div>
                 <div class="tag-list">
                   <span>Java</span><span>Spring Boot</span><span>MyBatis</span
                   ><span>React</span><span>MySQL</span><span>Redis</span>
@@ -287,6 +255,43 @@
                   >
                   <a
                     href="https://wemove-web.vercel.app/"
+                    target="_blank"
+                    class="btn btn-small btn-outline"
+                    >Live Demo</a
+                  >
+                </div>
+              </div>
+            </article>
+
+            <article class="project-card">
+              <div class="project-image project-thumbnail">
+                <img src="images/greencarry-web.png" alt="GreenCarry_Project 썸네일" style="width: 100%; height:100%; object-fit:cover; ">
+              </div>
+              <div class="project-body">
+                <h3>Green Carry</h3>
+                <p class="project-duration">⏱ 2026.03.24 ~ 2026.04.22 (약 4주)</p>
+                <p>
+                  탄소 저감형 친환경 배달 플랫폼입니다. 사용자가 주문한 건에
+                  대해 탄소 배출 절감 수치를 체감하고 지속가능한 친환경 소비에
+                  동참하는 것을 목표로 개발했습니다.
+                </p>
+                <div class="api-list">
+                  <span>API: Naver Map, Daum Post, Toss Payments, Gmail SMTP</span>
+                </div>
+                <div class="tag-list">
+                  <span>Java</span><span>Spring Boot</span><span>MyBatis</span
+                  ><span>React</span><span>Oracle</span>
+                </div>
+                <div class="project-actions">
+                  <a
+                    href="https://github.com/kimnayoung7777/GreenCarry_Project"
+                    target="_blank"
+                    rel="noopener"
+                    class="btn btn-small"
+                    >GitHub</a
+                  >
+                  <a
+                    href="https://greencarry.vercel.app/"
                     target="_blank"
                     class="btn btn-small btn-outline"
                     >Live Demo</a
@@ -334,6 +339,8 @@
       </div>
     </footer>
 
+    <!-- 최상단 이동 버튼 -->
+    <button id="scrollToTopBtn" aria-label="최상단으로 이동">↑</button>
     <script src="script.js"></script>
   </body>
 </html>
