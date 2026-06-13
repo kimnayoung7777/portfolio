@@ -1357,3 +1357,38 @@ body.dark-mode .tech-stack-names {
 body.dark-mode .tech-stack-desc {
   color: var(--muted);
 }
+
+/* =========================================
+   Hero Section - 모바일 반응형 완벽 패치
+   ========================================= */
+
+@media (max-width: 760px) {
+  /* 터미널 안쪽 여백과 글자 크기를 모바일에 맞게 축소 */
+  pre {
+    padding: 20px 16px !important;
+    font-size: 0.75rem !important;
+  }
+
+  /* 흔들림 방지용 고정 너비도 모바일 사이즈로 축소 */
+  #commit-text {
+    width: 180px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  /* 아이폰 SE 등 더 좁은 화면을 위한 추가 조치 */
+  #commit-text {
+    width: 140px !important;
+  }
+
+  /* 절대 화면 밖으로 나가지 않도록 안전장치 */
+  .hero-panel {
+    max-width: 100vw;
+    overflow: hidden;
+  }
+
+  .terminal-card {
+    width: 100%;
+    overflow-x: auto; /* 만약 그래도 길면 화면이 깨지는 대신 터미널 안에서만 스크롤되게 만듦 */
+  }
+}
