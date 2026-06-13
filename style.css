@@ -81,11 +81,50 @@ a {
   margin: 0 auto;
 }
 
+/* 로고 기본 폰트와 간격 */
 .logo {
-  font-size: 1.15rem;
+  font-family: "Consolas", "Courier New", monospace;
+  font-size: 1.3rem;
   font-weight: 800;
-  color: var(--text);
-  letter-spacing: 0;
+  letter-spacing: -0.5px;
+  display: inline-flex;
+  align-items: baseline;
+}
+/* 로고 점(Dot) RGB 무지개 애니메이션 */
+.logo-dot {
+  font-size: 1.8rem;
+  margin: 0 2px;
+  display: inline-block; /* 영역을 안전하게 확보 */
+  /* 글자색이 계속 변하는 애니메이션 적용 */
+  animation: rgb-shift 4s linear infinite;
+}
+
+/* 시간에 따라 색상과 빛 번짐(텍스트 섀도우)이 세트로 변함 */
+@keyframes rgb-shift {
+  0% {
+    color: #ff2a2a;
+    text-shadow: 0 0 8px rgba(255, 42, 42, 0.8);
+  }
+  20% {
+    color: #ff7a00;
+    text-shadow: 0 0 8px rgba(255, 122, 0, 0.8);
+  }
+  40% {
+    color: #ffd700;
+    text-shadow: 0 0 8px rgba(255, 215, 0, 0.8);
+  }
+  60% {
+    color: #00ff00;
+    text-shadow: 0 0 8px rgba(0, 255, 0, 0.8);
+  }
+  80% {
+    color: #00ffff;
+    text-shadow: 0 0 8px rgba(0, 255, 255, 0.8);
+  }
+  100% {
+    color: #ff2a2a;
+    text-shadow: 0 0 8px rgba(255, 42, 42, 0.8);
+  }
 }
 
 .nav-menu {
@@ -282,6 +321,8 @@ h1 {
   margin: 20px 0 34px 0;
   color: var(--muted);
   font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--text);
 }
 
 h2 {
@@ -668,8 +709,8 @@ body.dark-mode .project-image {
 .project-body p {
   flex-grow: 1;
   min-height: 20px;
-  margin-top: 5px;
-  margin-bottom: 5px;
+  margin-top: 12px;
+  margin-bottom: 12px;
 }
 
 .project-actions {
@@ -879,7 +920,6 @@ body.dark-mode .project-image {
 .notion-container {
   display: flex;
   flex-direction: column;
-  gap: 50px;
   max-width: 1100px;
   margin: 0 auto;
 }
@@ -887,6 +927,7 @@ body.dark-mode .project-image {
 .notion-row {
   display: flex;
   gap: 50px;
+  margin-bottom: 50px;
   align-items: stretch;
 }
 
@@ -1146,4 +1187,173 @@ pre code {
   color: var(--muted);
   margin-bottom: 15px;
   font-style: italic;
+}
+/* =========================================
+   About Me - Notion Style Dark Mode 완벽 패치
+   ========================================= */
+
+/* 1. 안 보이던 검은색 제목들을 밝은 색으로 전환 */
+body.dark-mode .notion-heading,
+body.dark-mode .notion-main-heading,
+body.dark-mode .timeline-info h4 {
+  color: var(--text) !important;
+  border-bottom-color: var(--line) !important;
+}
+
+/* 2. 본문 및 리스트 글씨를 부드러운 회색으로 전환 */
+body.dark-mode .notion-list,
+body.dark-mode .notion-list li,
+body.dark-mode .timeline-date {
+  color: var(--muted) !important;
+}
+
+/* 3. 눈부셨던 하얀색 자기소개 박스를 다크모드 카드 배경으로 변경 */
+body.dark-mode .notion-callout {
+  background-color: var(
+    --card-light
+  ) !important; /* Tech Stack 카드와 동일한 톤 */
+  border-color: var(--line) !important;
+  color: var(--text) !important;
+}
+
+body.dark-mode .callout-text p {
+  color: var(--text) !important;
+}
+
+body.dark-mode .callout-text strong {
+  color: var(--base-strong) !important;
+  border-bottom: 2px solid rgba(118, 215, 196, 0.4) !important; /* 강조 밑줄 색상도 다크모드에 맞게 */
+}
+
+/* 4. 타임라인 이모지 아이콘 배경색 변경 */
+body.dark-mode .timeline-icon {
+  background-color: var(--card) !important;
+}
+/* =========================================
+   Tech Stack - Dark Mode 디자인 수정
+   ========================================= */
+
+/* 1. 안쪽 그룹 박스(Frontend, Backend 등) 배경을 깔끔한 다크톤으로 */
+body.dark-mode .stack-group {
+  background: rgba(0, 0, 0, 0.2) !important;
+  border: 1px solid rgba(255, 255, 255, 0.05) !important;
+}
+
+/* 2. 일반 스킬 태그들에 은은한 배경과 테두리를 주어 형태 복구 */
+body.dark-mode .skill-tag {
+  background: rgba(255, 255, 255, 0.06) !important;
+  color: var(--muted) !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+}
+
+/* 일반 태그 마우스 오버 시 살짝 밝아지게 */
+body.dark-mode .skill-tag:hover {
+  background: rgba(255, 255, 255, 0.1) !important;
+}
+
+/* 3. 주력 스킬(Main) 태그는 확실하게 포인트 컬러로 강조 */
+body.dark-mode .skill-tag.main {
+  background: rgba(118, 215, 196, 0.15) !important;
+  color: var(--base-strong) !important;
+  border: 1px solid rgba(118, 215, 196, 0.4) !important;
+}
+
+/* =========================================
+   Tech Stack - 프리미엄 카테고리 디자인
+   ========================================= */
+.tech-category-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+.tech-category-card {
+  background: var(--card-bg);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 36px 32px;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+/* 마우스 호버 시 카드가 살짝 떠오르며 그림자가 생기는 고급스러운 효과 */
+.tech-category-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--base-strong);
+  box-shadow: 0 16px 40px rgba(52, 118, 105, 0.12);
+}
+
+.tech-category-header h3 {
+  font-size: 1.5rem;
+  color: var(--text);
+  margin: 0 0 16px 0;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* 제목 옆에 작은 브랜드 컬러 장식(사각형)을 넣어 '있어 보이는' 디테일 추가 */
+.tech-category-header h3::before {
+  content: "";
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  border-radius: 4px;
+  background: var(--base-strong);
+}
+
+.tech-stack-names {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--base-strong); /* 테마의 메인 컬러로 기술 스택 강조 */
+  margin: 0 0 10px 0;
+  letter-spacing: 0.5px;
+}
+
+/* 중간 점(·) 색상은 살짝 연하게 처리하여 가독성 높임 */
+.tech-stack-names .dot {
+  color: var(--muted);
+  margin: 0 6px;
+  font-weight: 400;
+  opacity: 0.5;
+}
+
+.tech-stack-desc {
+  font-size: 1.05rem;
+  color: var(--muted);
+  margin: 0;
+  line-height: 1.6;
+  word-break: keep-all;
+}
+
+/* 모바일 화면에서는 1줄로 자동 변환 */
+@media (max-width: 760px) {
+  .tech-category-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* =========================================
+   Tech Stack - 다크모드 완벽 지원
+   ========================================= */
+body.dark-mode .tech-category-card {
+  background: var(--card-light);
+  border-color: rgba(255, 255, 255, 0.05);
+}
+
+body.dark-mode .tech-category-card:hover {
+  border-color: var(--base-strong);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4);
+}
+
+body.dark-mode .tech-category-header h3 {
+  color: var(--text);
+}
+
+body.dark-mode .tech-stack-names {
+  color: #8ee4d4; /* 다크모드에서 더 화사하게 빛나는 형광 민트 톤 */
+}
+
+body.dark-mode .tech-stack-desc {
+  color: var(--muted);
 }

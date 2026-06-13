@@ -9,7 +9,7 @@
   <body>
     <header class="site-header">
       <nav class="navbar" aria-label="Main navigation">
-        <a href="#hero" class="logo">Nayoung KIM.dev</a>
+        <a href="#hero" class="logo">Nayoung KIM<span class="logo-dot">.</span>dev</a>
 
         <ul class="nav-menu">
           <li><a href="#hero" class="nav-link active">Home</a></li>
@@ -54,8 +54,8 @@
     "기계공학 전공자가 <br>
     <span class="highlight">왜 백엔드 개발자</span>가 되었을까요?"
   </h1>
-  <p class="hero-description" style="font-size: 1.2rem; font-weight: 500; color: var(--text);">
-    그 답을 이 포트폴리오에 담았습니다.
+  <p class="hero-description">
+    Java와 Spring Boot로 문제를 해결하는 그 과정을 담았습니다.
   </p>
 
             <div class="hero-actions">
@@ -86,8 +86,10 @@
 
       <section id="about" class="section">
         <div class="container notion-container">
-          
-          <!-- [첫 번째 줄] 프로필 이미지 & 자기소개 박스 -->
+        <div class="section-heading">
+          <p class="eyebrow">About Me</p>
+          <h2>자기소개</h2>
+        </div>
           <div class="notion-row">
             <aside class="notion-sidebar">
               <img src="images/profile.png" alt="김나영 프로필" class="notion-profile-img">
@@ -169,50 +171,49 @@
             <h2>프로젝트에 사용해 본 기술</h2>
           </div>
 
-          <div class="stack-grid">
-            <article class="stack-card">
-              <h2>Development</h2>
-
-              <div class="stack-group stack-frontend">
-                <h3>Frontend</h3>
-                <div class="skill-tags">
-                  <span class="skill-tag">HTML</span>
-                  <span class="skill-tag">CSS</span>
-                  <span class="skill-tag">JavaScript</span>
-                  <span class="skill-tag main">React</span>
-                </div>
-              </div>
-
-              <div class="stack-group stack-backend">
+          <div class="tech-category-grid">
+            
+            <!-- 백엔드 역량 강조를 위해 첫 번째에 배치 -->
+            <article class="tech-category-card">
+              <div class="tech-category-header">
                 <h3>Backend</h3>
-                <div class="skill-tags">
-                  <span class="skill-tag main">Java</span>
-                  <span class="skill-tag main">Spring Boot</span>
-                  <span class="skill-tag main">MyBatis</span>
-                </div>
+              </div>
+              <div class="tech-category-body">
+                <p class="tech-stack-names">Java <span class="dot">·</span> Spring Boot <span class="dot">·</span> MyBatis</p>
+                <p class="tech-stack-desc">REST API 설계 및 서버 로직 구현</p>
               </div>
             </article>
 
-            <article class="stack-card">
-              <h2>Data & Infrastructure</h2>
-
-              <div class="stack-group stack-database">
+            <article class="tech-category-card">
+              <div class="tech-category-header">
                 <h3>Database</h3>
-                <div class="skill-tags">
-                  <span class="skill-tag main">MySQL</span>
-                  <span class="skill-tag">Oracle</span>
-                </div>
               </div>
-
-              <div class="stack-group stack-infra-devops">
-                <h3>Infra & DevOps</h3>
-                <div class="skill-tags">
-                  <span class="skill-tag">AWS</span>
-                  <span class="skill-tag">Docker</span>
-                  <span class="skill-tag">GitHub Actions</span>
-                </div>
+              <div class="tech-category-body">
+                <p class="tech-stack-names">MySQL <span class="dot">·</span> Oracle</p>
+                <p class="tech-stack-desc">데이터 모델링 및 SQL 작성</p>
               </div>
             </article>
+
+            <article class="tech-category-card">
+              <div class="tech-category-header">
+                <h3>Infra & DevOps</h3>
+              </div>
+              <div class="tech-category-body">
+                <p class="tech-stack-names">AWS <span class="dot">·</span> Docker <span class="dot">·</span> GitHub Actions</p>
+                <p class="tech-stack-desc">배포 자동화 및 운영 환경 구축</p>
+              </div>
+            </article>
+
+            <article class="tech-category-card">
+              <div class="tech-category-header">
+                <h3>Frontend</h3>
+              </div>
+              <div class="tech-category-body">
+                <p class="tech-stack-names">HTML <span class="dot">·</span> CSS <span class="dot">·</span> JavaScript <span class="dot">·</span> React</p>
+                <p class="tech-stack-desc">사용자 인터페이스 구현 및 API 연동</p>
+              </div>
+            </article>
+
           </div>
         </div>
       </section>
@@ -239,7 +240,7 @@
                   서비스입니다.
                 </p>
                 <div class="api-list">
-                  <span>API: Kakao Map, Toss Payments, Gmail SMTP</span>
+                  <span>API: Kakao Map, Daum Postcode, Gmail SMTP, Public Data: 법정동 코드</span>
                 </div>
                 <div class="tag-list">
                   <span>Java</span><span>Spring Boot</span><span>MyBatis</span
