@@ -1,3 +1,6 @@
+/* =========================================
+   1. ROOT & BASE
+   ========================================= */
 :root {
   --bg: #fdfbf7;
   --bg-soft: #fdfbf7;
@@ -18,29 +21,9 @@
   --max-width: 1120px;
 }
 
-body.dark-mode {
-  --bg: #040b14;
-  --bg-soft: #07111f;
-  --card: #0b1728;
-  --card-light: #10233a;
-  --line: rgba(118, 215, 196, 0.18);
-  --text: #f8f7ff;
-  --muted: #b7c8d6;
-  --base: #76d7c4;
-  --base-strong: #8ee4d4;
-  --accent: #f9e076;
-  --accent-strong: #f1c95d;
-  --button-text: #221f2d;
-  --header-bg: rgba(7, 17, 31, 0.9);
-  --mobile-menu-bg: rgba(7, 17, 31, 0.98);
-  --card-bg: #0b1728;
-  --shadow: 0 24px 70px rgba(0, 0, 0, 0.28);
-}
-
 * {
   box-sizing: border-box;
 }
-
 html {
   scroll-behavior: smooth;
 }
@@ -60,7 +43,39 @@ a {
   color: inherit;
   text-decoration: none;
 }
+.container {
+  width: min(100% - 40px, var(--max-width));
+  margin: 0 auto;
+}
+.section {
+  padding-top: 60px;
+  padding-bottom: 112px;
+  scroll-margin-top: 78px;
+}
+.section-heading {
+  max-width: 900px;
+  margin-bottom: 42px;
+}
 
+h1,
+h2,
+h3,
+p {
+  overflow-wrap: break-word;
+}
+h2 {
+  margin: 0;
+  font-size: clamp(1.7rem, 4vw, 2.5rem);
+  line-height: 1.18;
+}
+h3 {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+/* =========================================
+   2. HEADER & NAVIGATION
+   ========================================= */
 .site-header {
   position: fixed;
   top: 0;
@@ -81,7 +96,6 @@ a {
   margin: 0 auto;
 }
 
-/* 로고 기본 폰트와 간격 */
 .logo {
   font-family: "Consolas", "Courier New", monospace;
   font-size: 1.3rem;
@@ -90,16 +104,14 @@ a {
   display: inline-flex;
   align-items: baseline;
 }
-/* 로고 점(Dot) RGB 무지개 애니메이션 */
+
 .logo-dot {
   font-size: 1.8rem;
   margin: 0 2px;
-  display: inline-block; /* 영역을 안전하게 확보 */
-  /* 글자색이 계속 변하는 애니메이션 적용 */
+  display: inline-block;
   animation: rgb-shift 4s linear infinite;
 }
 
-/* 시간에 따라 색상과 빛 번짐(텍스트 섀도우)이 세트로 변함 */
 @keyframes rgb-shift {
   0% {
     color: #ff2a2a;
@@ -135,7 +147,6 @@ a {
   margin: 0;
   list-style: none;
 }
-
 .nav-link {
   display: inline-flex;
   align-items: center;
@@ -147,7 +158,6 @@ a {
   font-weight: 700;
   transition: 180ms ease;
 }
-
 .nav-link:hover,
 .nav-link.active {
   color: var(--button-text);
@@ -159,7 +169,6 @@ a {
   align-items: center;
   gap: 10px;
 }
-
 .theme-toggle {
   display: inline-flex;
   align-items: center;
@@ -173,12 +182,10 @@ a {
   cursor: pointer;
   transition: 180ms ease;
 }
-
 .theme-toggle:hover {
   transform: translateY(-2px);
   box-shadow: 0 12px 28px rgba(52, 118, 105, 0.14);
 }
-
 .theme-toggle-track {
   position: relative;
   display: block;
@@ -189,7 +196,6 @@ a {
   background: var(--base);
   transition: 180ms ease;
 }
-
 .theme-toggle-thumb {
   position: absolute;
   top: 3px;
@@ -203,16 +209,6 @@ a {
     transform 180ms ease,
     background 180ms ease;
 }
-
-body.dark-mode .theme-toggle-track {
-  background: var(--accent);
-}
-
-body.dark-mode .theme-toggle-thumb {
-  transform: translateX(26px);
-  background: #07111f;
-}
-
 .menu-toggle {
   display: none;
   width: 42px;
@@ -222,7 +218,6 @@ body.dark-mode .theme-toggle-thumb {
   background: var(--card);
   cursor: pointer;
 }
-
 .menu-toggle span {
   display: block;
   width: 20px;
@@ -231,25 +226,19 @@ body.dark-mode .theme-toggle-thumb {
   background: var(--text);
   transition: 180ms ease;
 }
-
 .menu-toggle.open span:nth-child(1) {
   transform: translateY(7px) rotate(45deg);
 }
-
 .menu-toggle.open span:nth-child(2) {
   opacity: 0;
 }
-
 .menu-toggle.open span:nth-child(3) {
   transform: translateY(-7px) rotate(-45deg);
 }
 
-.section {
-  padding-top: 60px;
-  padding-bottom: 112px;
-  scroll-margin-top: 78px;
-}
-
+/* =========================================
+   3. HERO SECTION
+   ========================================= */
 .hero-section {
   min-height: 100vh;
   display: flex;
@@ -257,28 +246,12 @@ body.dark-mode .theme-toggle-thumb {
   padding-top: 120px;
   padding-bottom: 20px;
 }
-
-.container {
-  width: min(100% - 40px, var(--max-width));
-  margin: 0 auto;
-}
-
-.about-intro {
-  max-width: 1120px;
-  margin-top: 24px;
-  color: var(--muted);
-  font-size: 1.08rem;
-  line-height: 1.7;
-}
-
-.hero-grid,
-.about-grid {
+.hero-grid {
   display: grid;
   grid-template-columns: 1.08fr 0.92fr;
   gap: 44px;
   align-items: center;
 }
-
 .eyebrow {
   margin: 0 0 14px;
   color: var(--base-strong);
@@ -288,16 +261,8 @@ body.dark-mode .theme-toggle-thumb {
   letter-spacing: 0;
 }
 
-h1,
-h2,
-h3,
-p {
-  overflow-wrap: break-word;
-}
-/* h1 태그 안의 highlight 클래스 */
 .highlight {
   color: var(--base-strong);
-  /* 텍스트에만 살짝 포인트 배경색을 넣어 시선을 집중시킵니다 */
   background: linear-gradient(
     120deg,
     rgba(118, 215, 196, 0.2) 0%,
@@ -305,56 +270,29 @@ p {
   );
   padding: 0 5px;
 }
-
-/* 기존 h1 스타일을 수정하여 질문의 느낌을 살림 */
 h1 {
   max-width: 760px;
   margin: 0 0 20px 0;
-  font-size: clamp(2.2rem, 6vw, 3.5rem); /* 질문이니까 크기를 조금 더 키움 */
+  font-size: clamp(2.2rem, 6vw, 3.5rem);
   line-height: 1.2;
   letter-spacing: -0.02em;
   word-break: keep-all;
 }
-
-/* 하단 문구 스타일 조정 */
 .hero-description {
   margin: 20px 0 34px 0;
-  color: var(--muted);
+  color: var(--text);
   font-size: 1.1rem;
   font-weight: 500;
-  color: var(--text);
-}
-
-h2 {
-  margin: 0;
-  font-size: clamp(1.7rem, 4vw, 2.5rem);
-  line-height: 1.18;
-}
-
-h3 {
-  margin: 0;
-  font-size: 1.2rem;
-}
-
-.hero-actions,
-.project-actions,
-.contact-actions {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 12px;
-}
-
-.contact-card p {
-  display: flex;
-  justify-content: center;
+  word-break: keep-all;
 }
 
 .hero-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
   margin-top: 34px;
 }
-
 .btn {
   display: inline-flex;
   align-items: center;
@@ -370,40 +308,28 @@ h3 {
   font-family: inherit;
   font-size: 1rem;
 }
-
 .btn:hover {
   transform: translateY(-2px);
   box-shadow: 0 16px 36px rgba(249, 224, 118, 0.28);
 }
-
 .btn-outline {
   color: var(--text);
   background: var(--card);
 }
 
-.btn-small {
-  min-height: 40px;
-  padding: 9px 14px;
-  font-size: 0.9rem;
-}
-
-.hero-panel,
-.profile-card,
-.contact-card,
-.stack-card,
-.project-card,
-.strength-card {
+.hero-panel {
+  width: 100%;
+  max-width: 600px;
+  flex-shrink: 0;
   border: 1px solid var(--line);
   border-radius: 8px;
   background: var(--card-bg);
   box-shadow: var(--shadow);
 }
-
 .terminal-card {
   overflow: hidden;
   border-radius: 8px;
 }
-
 .terminal-top {
   display: flex;
   gap: 8px;
@@ -411,18 +337,15 @@ h3 {
   border-bottom: 1px solid var(--line);
   background: rgba(255, 255, 255, 0.03);
 }
-
 .terminal-top span {
   width: 12px;
   height: 12px;
   border-radius: 50%;
   background: var(--base-strong);
 }
-
 .terminal-top span:nth-child(2) {
   background: #ffd166;
 }
-
 .terminal-top span:nth-child(3) {
   background: #ef476f;
 }
@@ -430,492 +353,45 @@ h3 {
 pre {
   margin: 0;
   padding: 28px;
+  width: 100%;
+  max-width: 600px;
   overflow-x: auto;
   color: var(--text);
   font-size: clamp(0.84rem, 2vw, 1rem);
   line-height: 1.8;
 }
-
-.section-heading {
-  max-width: 900px;
-  margin-bottom: 42px;
+pre code {
+  display: block;
+  white-space: pre;
 }
-
-.profile-card {
-  width: 100%;
-  max-width: 400px;
-  margin: 0 auto;
-  height: fit-content;
-  padding: 28px;
-  text-align: center;
-}
-
-.profile-image {
-  display: grid;
-  place-items: center;
-  width: min(100%, 280px);
-  aspect-ratio: 1;
-  margin: 24px;
-  border: 1px solid rgba(118, 215, 196, 0.55);
-  border-radius: 8px;
-  background:
-    linear-gradient(
-      135deg,
-      rgba(118, 215, 196, 0.28),
-      rgba(249, 224, 118, 0.28)
-    ),
-    repeating-linear-gradient(
-      45deg,
-      rgba(52, 118, 105, 0.08) 0 10px,
-      transparent 10px 20px
-    );
-}
-
-.profile-image-name {
-  margin-top: 24px;
-  padding-top: 24px;
-}
-
-.project-thumbnail {
-  height: 330px;
-  overflow: hidden;
-  flex-shrink: 0;
-}
-
-.project-thumbnail img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: top;
-}
-
-.profile-image span {
-  font-size: 3rem;
-  font-weight: 900;
-  color: var(--text);
-}
-
-.strength-list {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.strength-card {
-  height: auto;
-}
-
-.profile-card p,
-.about-content p,
-.strength-card p,
-.project-card p,
-.contact-card p {
-  color: var(--muted);
-}
-
-.stack-grid,
-.project-grid {
-  display: grid;
-  gap: 20px;
-}
-
-.strength-list {
-  grid-template-columns: repeat(3, 1fr);
-}
-
-.strength-card,
-.stack-card,
-.project-card,
-.contact-card {
-  transition:
-    transform 180ms ease,
-    box-shadow 180ms ease,
-    border-color 180ms ease,
-    background 180ms ease;
-}
-
-.strength-card:hover,
-.stack-card:hover,
-.project-card:hover,
-.contact-card:hover {
-  transform: translateY(-6px);
-  border-color: rgba(249, 224, 118, 0.78);
-  box-shadow: 0 24px 58px rgba(35, 49, 47, 0.14);
-}
-
-.strength-card {
-  padding: 22px;
-}
-
-.strength-card span {
+#commit-text {
   display: inline-block;
-  margin-bottom: 14px;
+  width: 350px;
   color: var(--base-strong);
-  font-weight: 900;
-}
-
-.stack-grid {
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 28px;
-}
-
-.stack-card {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  align-content: start;
-  gap: 24px;
-  min-height: 100%;
-  padding: 32px;
-  border-radius: 12px;
-  box-shadow: 0 18px 48px rgba(35, 49, 47, 0.1);
-}
-
-.stack-card > h2 {
-  grid-column: 1 / -1;
-  margin: 0;
-  font-size: 1.45rem;
-  color: var(--text);
-}
-
-.stack-group {
-  min-width: 0;
-  padding: 18px;
-  border: 1px solid rgba(52, 118, 105, 0.12);
-  border-radius: 12px;
-  background: rgba(255, 255, 255, 0.34);
-}
-
-.stack-group h3 {
-  margin-bottom: 16px;
-  color: var(--base-strong);
-  font-size: 1rem;
-}
-
-/* 새로 바뀐 스킬 태그 스타일 */
-.skill-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-}
-
-.skill-tag {
-  padding: 6px 14px;
-  border-radius: 6px;
-  background: rgba(105, 122, 118, 0.1);
-  color: var(--muted);
-  font-size: 0.88rem;
-  font-weight: 600;
-  transition: all 0.2s ease;
-  border: 1px solid transparent;
-}
-
-.skill-tag:hover {
-  background: rgba(105, 122, 118, 0.2);
-}
-
-/* 주력 기술 강조 (main) */
-.skill-tag.main {
-  background: rgba(118, 215, 196, 0.15);
-  color: var(--base-strong);
-  border: 1px solid rgba(118, 215, 196, 0.3);
-}
-
-body.dark-mode .skill-tag.main {
-  background: rgba(118, 215, 196, 0.1);
-}
-
-.tag-list {
-  display: flex;
-  flex-wrap: wrap;
-  flex-shrink: 0;
-  gap: 8px;
-}
-
-.tag-list span {
-  display: inline-flex;
-  align-items: center;
-  min-height: 30px;
-  padding: 6px 10px;
-  border: 1px solid rgba(146, 132, 205, 0.22);
-  border-radius: 999px;
-  color: var(--text);
-  background: rgba(118, 215, 196, 0.18);
-  font-size: 0.84rem;
-  font-weight: 700;
-}
-
-.project-grid {
-  grid-template-columns: repeat(2, 1fr);
-  padding-bottom: 120px;
-}
-
-.project-card {
+  white-space: nowrap;
   overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  min-height: 620px;
-  height: auto;
+  text-overflow: ellipsis;
+  vertical-align: bottom;
+  transition: opacity 0.16s ease;
 }
 
-.project-image {
-  min-height: 210px;
-  border-bottom: 1px solid var(--line);
+.cursor {
+  display: inline-block;
+  width: 8px;
+  height: 1.2em;
+  background-color: var(--base-strong);
+  vertical-align: middle;
+  margin-left: 2px;
+  animation: blink 1s step-start infinite;
 }
-
-body.dark-mode .project-image {
-  background:
-    linear-gradient(
-      135deg,
-      rgba(118, 215, 196, 0.34),
-      rgba(249, 224, 118, 0.22)
-    ),
-    linear-gradient(
-      45deg,
-      #142b46 25%,
-      #07111f 25% 50%,
-      #142b46 50% 75%,
-      #07111f 75%
-    );
-  background-size:
-    auto,
-    42px 42px;
-}
-
-body.dark-mode .project-image {
-  background:
-    radial-gradient(
-      circle at 30% 35%,
-      rgba(249, 224, 118, 0.44),
-      transparent 20%
-    ),
-    radial-gradient(
-      circle at 70% 55%,
-      rgba(118, 215, 196, 0.34),
-      transparent 22%
-    ),
-    #10233a;
-}
-.project-body {
-  padding: 24px;
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-}
-
-.project-body h3 {
-  flex-shrink: 0;
-}
-
-.project-body p {
-  flex-grow: 1;
-  min-height: 20px;
-  margin-top: 12px;
-  margin-bottom: 12px;
-}
-
-.project-actions {
-  margin-top: 22px;
-  flex-shrink: 0;
-}
-
-.contact-section {
-  padding-bottom: 120px;
-}
-
-.contact-card {
-  position: relative;
-  overflow: hidden;
-  padding: clamp(26px, 5vw, 48px);
-  width: 80%;
-  max-width: 600px;
-  margin: 0 auto;
-}
-
-.contact-card p {
-  margin: 0 0 28px;
-  font-size: 1.08rem;
-}
-
-.footer {
-  border-top: 1px solid var(--line);
-  background: var(--bg-soft);
-}
-
-.footer-inner {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 20px;
-  min-height: 110px;
-  color: var(--muted);
-}
-
-.footer-inner p {
-  margin: 0;
-}
-
-.footer-links {
-  display: flex;
-  gap: 16px;
-}
-
-.footer-links a:hover {
-  color: var(--base-strong);
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
 }
 
 /* =========================================
-   반응형 (Media Queries)
-   ========================================= */
-
-@media (max-width: 1024px) {
-  .hero-grid,
-  .about-grid,
-  .stack-grid {
-    grid-template-columns: 1fr;
-  }
-  .strength-list {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-}
-
-@media (max-width: 760px) {
-  .navbar {
-    width: min(100% - 28px, var(--max-width));
-  }
-
-  .menu-toggle {
-    display: block;
-  }
-
-  .nav-menu {
-    position: fixed;
-    top: 72px;
-    left: 0;
-    display: none;
-    flex-direction: column;
-    align-items: stretch;
-    width: 100%;
-    padding: 16px;
-    border-bottom: 1px solid var(--line);
-    background: var(--mobile-menu-bg);
-  }
-
-  .nav-menu.open {
-    display: flex;
-  }
-
-  .nav-link {
-    justify-content: center;
-    width: 100%;
-    border-radius: 8px;
-  }
-
-  .container {
-    width: min(100% - 28px, var(--max-width));
-  }
-
-  .section {
-    padding: 84px 0;
-  }
-
-  .hero-section {
-    min-height: auto;
-    padding-top: 120px;
-  }
-
-  .strength-list,
-  .stack-grid,
-  .project-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .stack-card {
-    grid-template-columns: 1fr;
-    padding: 24px;
-  }
-
-  .footer-inner {
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
-  }
-}
-
-@media (max-width: 420px) {
-  .hero-actions,
-  .project-actions,
-  .contact-actions {
-    flex-direction: column;
-  }
-
-  .btn {
-    width: 100%;
-  }
-
-  pre {
-    padding: 20px;
-  }
-}
-
-/* Contact 카드 오버레이 */
-.card-overlay {
-  display: none;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.85);
-  backdrop-filter: blur(4px);
-  z-index: 10;
-  cursor: pointer;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-.overlay-content {
-  color: #ffffff;
-  text-align: center;
-}
-
-.overlay-content p {
-  margin: 0 0 5px 0 !important;
-  color: #cccccc !important;
-  font-size: 0.9rem;
-}
-
-.overlay-content h3 {
-  margin: 0 0 10px 0;
-  font-size: 1.8rem;
-  letter-spacing: 1px;
-}
-
-.overlay-content small {
-  color: #aaaaaa;
-  font-size: 0.8rem;
-}
-
-.toast {
-  visibility: hidden;
-  position: fixed;
-  bottom: 30px;
-  right: 30px;
-  background-color: #333;
-  color: #fff;
-  padding: 15px 25px;
-  border-radius: 8px;
-  z-index: 9999;
-  cursor: pointer;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-}
-
-.toast.show {
-  visibility: visible;
-}
-
-/* =========================================
-   About Me - Notion Style Layout
+   4. ABOUT ME (Notion Style)
    ========================================= */
 .notion-container {
   display: flex;
@@ -923,21 +399,18 @@ body.dark-mode .project-image {
   max-width: 1100px;
   margin: 0 auto;
 }
-
 .notion-row {
   display: flex;
   gap: 50px;
   margin-bottom: 50px;
   align-items: stretch;
 }
-
 .notion-sidebar {
   flex: 0 0 280px;
   display: flex;
   flex-direction: column;
   gap: 35px;
 }
-
 .notion-profile-img {
   width: 100%;
   border-radius: 8px;
@@ -954,7 +427,6 @@ body.dark-mode .project-image {
   padding-bottom: 10px;
   border-bottom: 1px solid #eaeaea;
 }
-
 .notion-list {
   list-style: none;
   padding: 0;
@@ -965,7 +437,6 @@ body.dark-mode .project-image {
   font-size: 0.95rem;
   color: #555;
 }
-
 .notion-list li {
   display: flex;
   align-items: center;
@@ -979,7 +450,6 @@ body.dark-mode .project-image {
   flex-direction: column;
   gap: 45px;
 }
-
 .notion-callout {
   display: flex;
   gap: 18px;
@@ -994,23 +464,19 @@ body.dark-mode .project-image {
   height: 100%;
   box-sizing: border-box;
 }
-
 .callout-text {
   display: flex;
   flex-direction: column;
   justify-content: center;
   height: auto;
 }
-
 .callout-text p {
   margin: 0 0 12px 0;
   word-break: keep-all;
 }
-
 .callout-text p:last-child {
   margin-bottom: 0;
 }
-
 .callout-text strong {
   border-bottom: 2px solid rgba(249, 224, 118, 0.75);
 }
@@ -1023,19 +489,16 @@ body.dark-mode .project-image {
   padding-bottom: 10px;
   border-bottom: 1px solid #eaeaea;
 }
-
 .notion-timeline {
   display: flex;
   flex-direction: column;
   gap: 40px;
 }
-
 .timeline-item {
   display: flex;
   gap: 18px;
   align-items: center;
 }
-
 .timeline-icon {
   font-size: 1.6rem;
   background: #f4f4f5;
@@ -1047,105 +510,290 @@ body.dark-mode .project-image {
   border-radius: 10px;
   flex-shrink: 0;
 }
-
 .timeline-info h4 {
   margin: 0 0 6px 0;
   font-size: 1.15rem;
   font-weight: 600;
   color: #37352f;
 }
-
 .timeline-date {
   font-size: 0.95rem;
   color: #787774;
 }
-/* 터미널 깜빡이는 커서 효과 */
-.cursor {
-  display: inline-block;
-  width: 8px;
-  height: 1.2em;
-  background-color: var(--base-strong);
-  vertical-align: middle;
-  margin-left: 2px;
-  animation: blink 1s step-start infinite;
+
+/* =========================================
+   5. TECH STACK (Category Style)
+   ========================================= */
+.tech-category-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
 }
-
-@keyframes blink {
-  50% {
-    opacity: 0;
-  }
+.tech-category-card {
+  background: var(--card-bg);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 36px 32px;
+  transition: all 0.3s ease;
+  position: relative;
 }
-
-@media (max-width: 860px) {
-  .notion-row {
-    flex-direction: column;
-    gap: 30px;
-  }
-
-  .notion-sidebar {
-    flex: auto;
-    width: 100%;
-  }
-
-  .notion-profile-img {
-    max-width: 280px;
-    margin: 0 auto;
-  }
+.tech-category-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--base-strong);
+  box-shadow: 0 16px 40px rgba(52, 118, 105, 0.12);
 }
-/* 터미널 전체 영역(pre)의 너비를 고정하고 넘치는 내용을 숨김 */
-pre {
-  margin: 0;
-  padding: 28px;
-  /* 핵심: 터미널 박스가 부모의 너비를 벗어나지 않게 제어 */
-  width: 100%;
-  max-width: 600px; /* 원하는 최대 너비로 고정 */
-  overflow-x: auto;
+.tech-category-header h3 {
+  font-size: 1.5rem;
   color: var(--text);
-  font-size: clamp(0.84rem, 2vw, 1rem);
-  line-height: 1.8;
+  margin: 0 0 16px 0;
+  display: flex;
+  align-items: center;
+  gap: 12px;
 }
-
-/* code 태그가 넘치지 않게 block 요소로 변경 */
-pre code {
-  display: block;
-  white-space: pre; /* 코드 포맷 유지 */
-}
-
-/* 터미널 텍스트 전환 시 레이아웃 흔들림 방지 */
-#commit-text {
+.tech-category-header h3::before {
+  content: "";
   display: inline-block;
-  width: 350px;
+  width: 14px;
+  height: 14px;
+  border-radius: 4px;
+  background: var(--base-strong);
+}
+
+.tech-stack-names {
+  font-size: 1.15rem;
+  font-weight: 700;
   color: var(--base-strong);
-  white-space: nowrap;
+  margin: 0 0 10px 0;
+  letter-spacing: 0.5px;
+}
+.tech-stack-names .dot {
+  color: var(--muted);
+  margin: 0 6px;
+  font-weight: 400;
+  opacity: 0.5;
+}
+.tech-stack-desc {
+  font-size: 1.05rem;
+  color: var(--muted);
+  margin: 0;
+  line-height: 1.6;
+  word-break: keep-all;
+}
+
+/* =========================================
+   6. PROJECTS SECTION (완벽 대칭 및 레이아웃 수정본)
+   ========================================= */
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  padding-bottom: 120px;
+}
+
+.project-card {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--card-bg);
+  box-shadow: var(--shadow);
   overflow: hidden;
-  text-overflow: ellipsis;
-  vertical-align: bottom;
-  transition: opacity 0.16s ease;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  transition:
+    transform 180ms ease,
+    box-shadow 180ms ease,
+    border-color 180ms ease;
 }
-.hero-panel {
+
+.project-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(249, 224, 118, 0.78);
+  box-shadow: 0 24px 58px rgba(35, 49, 47, 0.14);
+}
+
+.project-image {
+  min-height: 210px;
+  border-bottom: 1px solid var(--line);
+}
+.project-thumbnail {
+  height: 330px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.project-thumbnail img {
   width: 100%;
-  max-width: 600px; /* 여기서 부모 영역 너비를 고정 */
-  flex-shrink: 0; /* 다른 요소에 의해 찌그러지지 않게 방지 */
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
 }
 
-/* 터미널 깜빡이는 커서 효과 */
-.cursor {
+.project-body {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  flex: 1; /* 카드의 남은 세로 공간을 전부 차지하게 설정 */
+}
+
+.project-body h3 {
+  margin: 0 0 8px 0;
+}
+.project-duration {
+  font-size: 0.85rem;
+  color: var(--base-strong);
+  font-weight: 600;
+  margin: 0 0 16px 0;
+}
+
+/* [수정됨] 설명글 높이 완벽 고정 (h4가 시작되는 위치를 양쪽 똑같이 맞춤) */
+.project-body > p:not(.project-duration) {
+  height: 80px; /* 고정 높이 할당 */
+  margin: 0 0 16px 0;
+  color: var(--muted);
+  overflow: hidden; /* 글자가 넘치더라도 레이아웃이 밀리지 않음 */
+}
+
+/* [수정됨] H4 디자인 마진 통일 */
+.project-body h4 {
+  margin: 0 0 16px 0;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.project-body h4::before {
+  content: "";
   display: inline-block;
-  width: 8px;
-  height: 1.2em;
-  background-color: var(--base-strong);
-  vertical-align: middle;
-  margin-left: 2px;
-  animation: blink 1s step-start infinite;
+  width: 4px;
+  height: 16px;
+  border-radius: 2px;
+  background: var(--base-strong);
 }
 
-@keyframes blink {
-  50% {
-    opacity: 0;
-  }
+/* [수정됨] 리스트 영역이 카드의 남는 공간을 모두 흡수하도록 하여 바닥을 맞춤 */
+.project-roles {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 24px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex-grow: 1; /* 핵심: 양쪽 리스트 길이가 달라도 여기서 빈 공간을 다 흡수함 */
 }
 
-/* 플로팅 버튼 스타일 */
+.project-roles li {
+  position: relative;
+  padding-left: 20px;
+  font-size: 0.9rem;
+  color: var(--text);
+  line-height: 1.5;
+}
+
+.project-roles li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--base-strong);
+  font-weight: 900;
+}
+.project-roles li strong {
+  color: var(--base-strong);
+  margin-right: 4px;
+}
+
+/* [수정됨] 모든 마진/패딩 통일 및 잔여 margin-top 삭제 */
+.api-list {
+  font-size: 0.8rem;
+  color: var(--muted);
+  font-style: italic;
+  margin: 0 0 16px 0 !important; /* 악성 margin-top 111px 완벽 제거 */
+  padding: 0 !important;
+}
+
+.tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0 0 24px 0; /* 버튼 위쪽 간격 완벽 고정 */
+}
+
+.tag-list span {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 10px;
+  border: 1px solid rgba(146, 132, 205, 0.22);
+  border-radius: 999px;
+  color: var(--text);
+  background: rgba(118, 215, 196, 0.18);
+  font-size: 0.84rem;
+  font-weight: 700;
+}
+
+/* [수정됨] 버튼 영역 정중앙 배치 및 여백 고정 */
+.project-actions {
+  display: flex;
+  justify-content: center; /* 버튼 무조건 가운데 정렬 */
+  gap: 12px;
+  margin: 0;
+  padding-bottom: 0;
+}
+
+/* =========================================
+   7. CONTACT, FOOTER & UTILS
+   ========================================= */
+.contact-section {
+  padding-bottom: 120px;
+}
+.contact-card {
+  position: relative;
+  overflow: hidden;
+  padding: clamp(26px, 5vw, 48px);
+  width: 80%;
+  max-width: 600px;
+  margin: 0 auto;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--card-bg);
+  box-shadow: var(--shadow);
+  transition: transform 180ms ease;
+}
+.contact-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(249, 224, 118, 0.78);
+}
+.contact-card p {
+  margin: 0 0 28px 0;
+  font-size: 1.08rem;
+  display: flex;
+  justify-content: center;
+}
+
+.footer {
+  border-top: 1px solid var(--line);
+  background: var(--bg-soft);
+}
+.footer-inner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  min-height: 110px;
+  color: var(--muted);
+}
+.footer-inner p {
+  margin: 0;
+}
+.footer-links {
+  display: flex;
+  gap: 16px;
+}
+.footer-links a:hover {
+  color: var(--base-strong);
+}
+
 #scrollToTopBtn {
   position: fixed;
   bottom: 30px;
@@ -1160,235 +808,209 @@ pre code {
   font-size: 20px;
   cursor: pointer;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-
-  /* 숨김 처리 */
   opacity: 0;
   visibility: hidden;
   transition: all 0.3s ease;
 }
-
 #scrollToTopBtn.show {
   opacity: 1;
   visibility: visible;
 }
-
 #scrollToTopBtn:hover {
   transform: translateY(-5px);
   background: var(--accent-strong);
 }
-.project-duration {
-  font-size: 0.85rem;
-  color: var(--base-strong);
-  font-weight: 600;
-}
 
-.api-list {
-  font-size: 0.8rem;
-  color: var(--muted);
-  margin-bottom: 15px;
-  font-style: italic;
-}
 /* =========================================
-   About Me - Notion Style Dark Mode 완벽 패치
+   8. DARK MODE
    ========================================= */
+body.dark-mode .theme-toggle-track {
+  background: var(--accent);
+}
+body.dark-mode .theme-toggle-thumb {
+  transform: translateX(26px);
+  background: #07111f;
+}
+body.dark-mode .project-image {
+  background:
+    radial-gradient(
+      circle at 30% 35%,
+      rgba(249, 224, 118, 0.44),
+      transparent 20%
+    ),
+    radial-gradient(
+      circle at 70% 55%,
+      rgba(118, 215, 196, 0.34),
+      transparent 22%
+    ),
+    #10233a;
+}
 
-/* 1. 안 보이던 검은색 제목들을 밝은 색으로 전환 */
+/* About Me 다크모드 */
 body.dark-mode .notion-heading,
 body.dark-mode .notion-main-heading,
 body.dark-mode .timeline-info h4 {
   color: var(--text) !important;
   border-bottom-color: var(--line) !important;
 }
-
-/* 2. 본문 및 리스트 글씨를 부드러운 회색으로 전환 */
 body.dark-mode .notion-list,
 body.dark-mode .notion-list li,
 body.dark-mode .timeline-date {
   color: var(--muted) !important;
 }
-
-/* 3. 눈부셨던 하얀색 자기소개 박스를 다크모드 카드 배경으로 변경 */
 body.dark-mode .notion-callout {
-  background-color: var(
-    --card-light
-  ) !important; /* Tech Stack 카드와 동일한 톤 */
+  background-color: var(--card-light) !important;
   border-color: var(--line) !important;
   color: var(--text) !important;
 }
-
 body.dark-mode .callout-text p {
   color: var(--text) !important;
 }
-
 body.dark-mode .callout-text strong {
   color: var(--base-strong) !important;
-  border-bottom: 2px solid rgba(118, 215, 196, 0.4) !important; /* 강조 밑줄 색상도 다크모드에 맞게 */
+  border-bottom: 2px solid rgba(118, 215, 196, 0.4) !important;
 }
-
-/* 4. 타임라인 이모지 아이콘 배경색 변경 */
 body.dark-mode .timeline-icon {
   background-color: var(--card) !important;
 }
-/* =========================================
-   Tech Stack - Dark Mode 디자인 수정
-   ========================================= */
 
-/* 1. 안쪽 그룹 박스(Frontend, Backend 등) 배경을 깔끔한 다크톤으로 */
-body.dark-mode .stack-group {
-  background: rgba(0, 0, 0, 0.2) !important;
-  border: 1px solid rgba(255, 255, 255, 0.05) !important;
+/* Tech Stack 다크모드 */
+body.dark-mode .tech-category-card {
+  background: var(--card-light);
+  border-color: rgba(255, 255, 255, 0.05);
 }
-
-/* 2. 일반 스킬 태그들에 은은한 배경과 테두리를 주어 형태 복구 */
-body.dark-mode .skill-tag {
-  background: rgba(255, 255, 255, 0.06) !important;
-  color: var(--muted) !important;
-  border: 1px solid rgba(255, 255, 255, 0.08) !important;
-}
-
-/* 일반 태그 마우스 오버 시 살짝 밝아지게 */
-body.dark-mode .skill-tag:hover {
-  background: rgba(255, 255, 255, 0.1) !important;
-}
-
-/* 3. 주력 스킬(Main) 태그는 확실하게 포인트 컬러로 강조 */
-body.dark-mode .skill-tag.main {
-  background: rgba(118, 215, 196, 0.15) !important;
-  color: var(--base-strong) !important;
-  border: 1px solid rgba(118, 215, 196, 0.4) !important;
-}
-
-/* =========================================
-   Tech Stack - 프리미엄 카테고리 디자인
-   ========================================= */
-.tech-category-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 24px;
-}
-
-.tech-category-card {
-  background: var(--card-bg);
-  border: 1px solid var(--line);
-  border-radius: 12px;
-  padding: 36px 32px;
-  transition: all 0.3s ease;
-  position: relative;
-}
-
-/* 마우스 호버 시 카드가 살짝 떠오르며 그림자가 생기는 고급스러운 효과 */
-.tech-category-card:hover {
-  transform: translateY(-6px);
+body.dark-mode .tech-category-card:hover {
   border-color: var(--base-strong);
-  box-shadow: 0 16px 40px rgba(52, 118, 105, 0.12);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4);
 }
-
-.tech-category-header h3 {
-  font-size: 1.5rem;
+body.dark-mode .tech-category-header h3 {
   color: var(--text);
-  margin: 0 0 16px 0;
-  display: flex;
-  align-items: center;
-  gap: 12px;
 }
-
-/* 제목 옆에 작은 브랜드 컬러 장식(사각형)을 넣어 '있어 보이는' 디테일 추가 */
-.tech-category-header h3::before {
-  content: "";
-  display: inline-block;
-  width: 14px;
-  height: 14px;
-  border-radius: 4px;
-  background: var(--base-strong);
+body.dark-mode .tech-stack-names {
+  color: #8ee4d4;
 }
-
-.tech-stack-names {
-  font-size: 1.15rem;
-  font-weight: 700;
-  color: var(--base-strong); /* 테마의 메인 컬러로 기술 스택 강조 */
-  margin: 0 0 10px 0;
-  letter-spacing: 0.5px;
-}
-
-/* 중간 점(·) 색상은 살짝 연하게 처리하여 가독성 높임 */
-.tech-stack-names .dot {
+body.dark-mode .tech-stack-desc {
   color: var(--muted);
-  margin: 0 6px;
-  font-weight: 400;
-  opacity: 0.5;
 }
 
-.tech-stack-desc {
-  font-size: 1.05rem;
+/* 프로젝트 카드 다크모드 */
+body.dark-mode .project-body h4 {
+  color: var(--text);
+}
+body.dark-mode .project-roles li {
   color: var(--muted);
-  margin: 0;
-  line-height: 1.6;
-  word-break: keep-all;
 }
 
-/* 모바일 화면에서는 1줄로 자동 변환 */
-@media (max-width: 760px) {
+/* =========================================
+   9. MEDIA QUERIES (반응형)
+   ========================================= */
+@media (max-width: 1024px) {
+  .hero-grid,
   .tech-category-grid {
     grid-template-columns: 1fr;
   }
 }
 
-/* =========================================
-   Tech Stack - 다크모드 완벽 지원
-   ========================================= */
-body.dark-mode .tech-category-card {
-  background: var(--card-light);
-  border-color: rgba(255, 255, 255, 0.05);
+@media (max-width: 900px) {
+  .project-grid {
+    grid-template-columns: 1fr;
+  } /* 모바일 세로 1줄 배치 */
+  /* 모바일에서는 높이 강제 고정 해제 */
+  .project-body > p:not(.project-duration) {
+    height: auto;
+  }
+  .project-roles {
+    flex-grow: 0;
+  }
 }
 
-body.dark-mode .tech-category-card:hover {
-  border-color: var(--base-strong);
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4);
+@media (max-width: 860px) {
+  .notion-row {
+    flex-direction: column;
+    gap: 30px;
+  }
+  .notion-sidebar {
+    flex: auto;
+    width: 100%;
+  }
+  .notion-profile-img {
+    max-width: 280px;
+    margin: 0 auto;
+  }
 }
-
-body.dark-mode .tech-category-header h3 {
-  color: var(--text);
-}
-
-body.dark-mode .tech-stack-names {
-  color: #8ee4d4; /* 다크모드에서 더 화사하게 빛나는 형광 민트 톤 */
-}
-
-body.dark-mode .tech-stack-desc {
-  color: var(--muted);
-}
-
-/* =========================================
-   Hero Section - 모바일 반응형 완벽 패치
-   ========================================= */
 
 @media (max-width: 760px) {
-  /* 터미널 안쪽 여백과 글자 크기를 모바일에 맞게 축소 */
+  .navbar {
+    width: min(100% - 28px, var(--max-width));
+  }
+  .menu-toggle {
+    display: block;
+  }
+  .nav-menu {
+    position: fixed;
+    top: 72px;
+    left: 0;
+    display: none;
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+    padding: 16px;
+    border-bottom: 1px solid var(--line);
+    background: var(--mobile-menu-bg);
+  }
+  .nav-menu.open {
+    display: flex;
+  }
+  .nav-link {
+    justify-content: center;
+    width: 100%;
+    border-radius: 8px;
+  }
+  .container {
+    width: min(100% - 28px, var(--max-width));
+  }
+  .section {
+    padding: 84px 0;
+  }
+  .hero-section {
+    min-height: auto;
+    padding-top: 120px;
+  }
   pre {
     padding: 20px 16px !important;
     font-size: 0.75rem !important;
   }
-
-  /* 흔들림 방지용 고정 너비도 모바일 사이즈로 축소 */
   #commit-text {
     width: 180px !important;
+  }
+  .footer-inner {
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
   }
 }
 
 @media (max-width: 480px) {
-  /* 아이폰 SE 등 더 좁은 화면을 위한 추가 조치 */
   #commit-text {
     width: 140px !important;
   }
-
-  /* 절대 화면 밖으로 나가지 않도록 안전장치 */
   .hero-panel {
     max-width: 100vw;
     overflow: hidden;
   }
-
   .terminal-card {
     width: 100%;
-    overflow-x: auto; /* 만약 그래도 길면 화면이 깨지는 대신 터미널 안에서만 스크롤되게 만듦 */
+    overflow-x: auto;
+  }
+}
+
+@media (max-width: 420px) {
+  .hero-actions,
+  .project-actions,
+  .contact-actions {
+    flex-direction: column;
+  }
+  .btn {
+    width: 100%;
   }
 }

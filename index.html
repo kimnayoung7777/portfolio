@@ -71,17 +71,20 @@
                 <span></span>
                 <span></span>
               </div>
-              <pre><code>const kimNayoung = {
-  role: "Junior Backend Developer",
-  core: ["Java", "Spring Boot", "Architecture"],
-  focus: "System Stability",
-  current_project: "WeMove (Latest)",
-  latest_commit: "<span id="commit-text">feat: Optimize MyBatis queries</span>",
-  status: "Looking for new opportunities"
-};<span class="cursor"></span></code></pre>
+              <pre><code>public class BackendDeveloper {
+    private String name = "Kim Nayoung";
+    private String role = "Junior Backend Developer";
+    private List&lt;String&gt; coreTech = List.of("Java", "Spring Boot", "MyBatis");
+    private String focus = "Data Integrity & Architecture";
+    private String currentProject = "WeMove (Latest)";
+    private String latestCommit = "<span id="commit-text">feat: Optimize MyBatis queries</span>";
+    private String status = "Looking for new opportunities";
+}<span class="cursor"></span></code></pre>
             </div>
           </div>
+
         </div>
+
       </section>
 
       <section id="about" class="section">
@@ -239,6 +242,14 @@
                   참가자 승인 상태 관리, 채팅, 관리자 기능 등을 구현한 웹
                   서비스입니다.
                 </p>
+                <h4>주요 구현 기능</h4>
+                <ul class="project-roles">
+                  <li><strong>Authorization:</strong> 주최자·작성자 권한 분리 기반 모임 CRUD 구현</li>
+                  <li><strong>Business Logic:</strong> 모집 인원 변경에 따른 상태 자동 전환 로직 설계</li>
+                  <li><strong>Comment System:</strong> 계층형 댓글 및 연쇄 삭제 처리 로직 구현</li>
+                  <li><strong>Data Lifecycle:</strong> Soft Delete 기반 데이터 생애주기 관리</li>
+                </ul>
+
                 <div class="api-list">
                   <span>API: Kakao Map, Daum Postcode, Gmail SMTP, Public Data: 법정동 코드</span>
                 </div>
@@ -276,8 +287,18 @@
                   대해 탄소 배출 절감 수치를 체감하고 지속가능한 친환경 소비에
                   동참하는 것을 목표로 개발했습니다.
                 </p>
+                <h4>주요 구현 기능</h4>
+                <ul class="project-roles">
+                  <ul class="project-roles">
+                      <li><strong>Authentication:</strong> 일반회원·사업자 회원가입 및 로그인 기능 구현</li>
+                      <li><strong>Security:</strong> JWT 인증 및 BCrypt 기반 비밀번호 암호화 적용</li>
+                      <li><strong>Account Recovery:</strong> 이메일 인증 및 아이디·비밀번호 찾기 기능 구현</li>
+                      <li><strong>Customer Support:</strong> FAQ 및 1:1 문의 관리 기능 구현</li>
+                      <li><strong>Analytics:</strong> 매출 집계 쿼리 설계 및 통계 대시보드 구현</li>
+                  </ul>
+
                 <div class="api-list">
-                  <span>API: Naver Map, Daum Post, Toss Payments, Gmail SMTP</span>
+                  <span>API: Naver Map, Daum Postcode, Toss Payments, Gmail SMTP</span>
                 </div>
                 <div class="tag-list">
                   <span>Java</span><span>Spring Boot</span><span>MyBatis</span

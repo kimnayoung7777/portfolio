@@ -102,13 +102,13 @@ document.addEventListener("DOMContentLoaded", function () {
   const commitElement = document.getElementById("commit-text");
 
   if (commitElement) {
-    // 실제 고민하고 해결했던 개발 태스크 위주의 커밋 메시지 배열
+    // 실제 백엔드 개발 과정에서 치열하게 고민했던 흔적들을 담은 커밋 메시지
     const commits = [
       "feat: Optimize MyBatis aggregation queries",
-      "chore: Configure Docker named volumes for deploy",
       "refactor: Expand DB tables to optimize complexity",
-      "feat: Implement GreenCarry carbon calculator",
+      "chore: Configure Docker named volumes for deploy",
       "feat: Build multi-role logic for Admin and Owner",
+      "feat: Implement GreenCarry carbon calculator",
       "feat: Implement WeMove user matching workflow",
     ];
 
@@ -117,7 +117,6 @@ document.addEventListener("DOMContentLoaded", function () {
     setInterval(() => {
       currentIndex = (currentIndex + 1) % commits.length;
 
-      // 글자 바뀔 때 부드럽게 깜빡이는 효과만 부여 (정적인 틀 유지)
       commitElement.style.opacity = 0;
 
       setTimeout(() => {
