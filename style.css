@@ -579,9 +579,8 @@ pre code {
   line-height: 1.6;
   word-break: keep-all;
 }
-
 /* =========================================
-   6. PROJECTS SECTION (완벽 대칭 및 레이아웃 수정본)
+   6. PROJECTS SECTION (절대 꺾이지 않는 완벽 대칭)
    ========================================= */
 .project-grid {
   display: grid;
@@ -627,11 +626,12 @@ pre code {
   object-position: top;
 }
 
+/* 카드 내부 전체 컨테이너 */
 .project-body {
   padding: 24px;
   display: flex;
   flex-direction: column;
-  flex: 1; /* 카드의 남은 세로 공간을 전부 차지하게 설정 */
+  flex: 1 1 auto;
 }
 
 .project-body h3 {
@@ -639,20 +639,19 @@ pre code {
 }
 .project-duration {
   font-size: 0.85rem;
-  color: var(--base-strong);
+  color: var(--muted);
   font-weight: 600;
   margin: 0 0 16px 0;
 }
 
-/* [수정됨] 설명글 높이 완벽 고정 (h4가 시작되는 위치를 양쪽 똑같이 맞춤) */
+/* 💡 해결 1: 설명글(p) 높이 양쪽 완벽 고정 */
 .project-body > p:not(.project-duration) {
-  height: 80px; /* 고정 높이 할당 */
-  margin: 0 0 16px 0;
+  height: 80px !important;
+  margin: 0 0 16px 0 !important;
   color: var(--muted);
-  overflow: hidden; /* 글자가 넘치더라도 레이아웃이 밀리지 않음 */
+  overflow: hidden;
 }
 
-/* [수정됨] H4 디자인 마진 통일 */
 .project-body h4 {
   margin: 0 0 16px 0;
   font-size: 1.05rem;
@@ -672,15 +671,17 @@ pre code {
   background: var(--base-strong);
 }
 
-/* [수정됨] 리스트 영역이 카드의 남는 공간을 모두 흡수하도록 하여 바닥을 맞춤 */
+/* 💡 해결 2: UL 높이 강제 고정 (항목이 4개든 5개든 아래에 빈 공간을 만들어 양쪽 높이를 똑같이 맞춤) */
 .project-roles {
-  list-style: none;
-  padding: 0;
-  margin: 0 0 24px 0;
+  list-style: none !important;
+  min-height: 175px !important;
+  flex-grow: 0 !important; /* 멋대로 늘어나는 현상 박멸 */
+  margin: 0 0 20px 0 !important;
+  padding: 0 !important;
   display: flex;
   flex-direction: column;
+  justify-content: flex-start;
   gap: 10px;
-  flex-grow: 1; /* 핵심: 양쪽 리스트 길이가 달라도 여기서 빈 공간을 다 흡수함 */
 }
 
 .project-roles li {
@@ -704,20 +705,22 @@ pre code {
   margin-right: 4px;
 }
 
-/* [수정됨] 모든 마진/패딩 통일 및 잔여 margin-top 삭제 */
+/* 💡 해결 3: api-list의 111px 악성 마진 및 패딩 완전 삭제 */
 .api-list {
   font-size: 0.8rem;
   color: var(--muted);
   font-style: italic;
-  margin: 0 0 16px 0 !important; /* 악성 margin-top 111px 완벽 제거 */
+  margin: 0 0 16px 0 !important;
   padding: 0 !important;
 }
 
+/* 💡 해결 4: 태그 리스트 여백 고정 */
 .tag-list {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
-  margin: 0 0 24px 0; /* 버튼 위쪽 간격 완벽 고정 */
+  margin: 0 0 20px 0 !important;
+  padding: 0 !important;
 }
 
 .tag-list span {
@@ -732,15 +735,14 @@ pre code {
   font-weight: 700;
 }
 
-/* [수정됨] 버튼 영역 정중앙 배치 및 여백 고정 */
+/* 💡 해결 5: 버튼 정중앙 복귀 및 하단 여백 완벽 통일 */
 .project-actions {
-  display: flex;
-  justify-content: center; /* 버튼 무조건 가운데 정렬 */
+  display: flex !important;
+  justify-content: center !important; /* 왼쪽으로 가출한 버튼들 가운데로 강제 소환 */
   gap: 12px;
-  margin: 0;
-  padding-bottom: 0;
+  margin: auto 0 0 0 !important; /* 상단 마진을 auto로 줘서 버튼들을 카드의 가장 밑바닥으로 똑같이 밀어버림 */
+  padding: 0 !important;
 }
-
 /* =========================================
    7. CONTACT, FOOTER & UTILS
    ========================================= */
@@ -769,6 +771,15 @@ pre code {
   font-size: 1.08rem;
   display: flex;
   justify-content: center;
+}
+
+/* 💡 누락됐던 버튼 중앙 정렬 복구 */
+.contact-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
 }
 
 .footer {
@@ -821,9 +832,84 @@ pre code {
   background: var(--accent-strong);
 }
 
+/* 💡 누락됐던 전화번호 팝업(오버레이) 완벽 복구 */
+.card-overlay {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(4px);
+  z-index: 10;
+  cursor: pointer;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.overlay-content {
+  color: #ffffff;
+  text-align: center;
+}
+.overlay-content p {
+  margin: 0 0 5px 0 !important;
+  color: #cccccc !important;
+  font-size: 0.9rem;
+  display: block;
+}
+.overlay-content h3 {
+  margin: 0 0 10px 0;
+  font-size: 1.8rem;
+  letter-spacing: 1px;
+  color: #fff;
+}
+.overlay-content small {
+  color: #aaaaaa;
+  font-size: 0.8rem;
+}
+
+/* 💡 누락됐던 이메일 복사 알림(토스트) 복구 */
+.toast {
+  visibility: hidden;
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background-color: #333;
+  color: #fff;
+  padding: 15px 25px;
+  border-radius: 8px;
+  z-index: 9999;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+.toast.show {
+  visibility: visible;
+}
+
 /* =========================================
    8. DARK MODE
    ========================================= */
+body.dark-mode {
+  --bg: #040b14;
+  --bg-soft: #07111f;
+  --card: #0b1728;
+  --card-light: #10233a;
+  --line: rgba(118, 215, 196, 0.18);
+  --text: #f8f7ff;
+  --muted: #b7c8d6;
+  --base: #76d7c4;
+  --base-strong: #8ee4d4;
+  --accent: #f9e076;
+  --accent-strong: #f1c95d;
+  --button-text: #221f2d;
+  --header-bg: rgba(7, 17, 31, 0.9);
+  --mobile-menu-bg: rgba(7, 17, 31, 0.98);
+  --card-bg: #0b1728;
+  --shadow: 0 24px 70px rgba(0, 0, 0, 0.28);
+}
+
 body.dark-mode .theme-toggle-track {
   background: var(--accent);
 }
