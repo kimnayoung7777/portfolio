@@ -524,12 +524,20 @@ pre code {
 /* =========================================
    5. TECH STACK (Category Style)
    ========================================= */
+.tech-category-body {
+  gap: 8px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
 .tech-category-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 24px;
 }
 .tech-category-card {
+  display: flex;
+  flex-direction: column;
   background: var(--card-bg);
   border: 1px solid var(--line);
   border-radius: 12px;
@@ -568,7 +576,7 @@ pre code {
 }
 .tech-stack-names .dot {
   color: var(--muted);
-  margin: 0 6px;
+  margin: 0 10px;
   font-weight: 400;
   opacity: 0.5;
 }
@@ -578,6 +586,7 @@ pre code {
   margin: 0;
   line-height: 1.6;
   word-break: keep-all;
+  margin-top: auto;
 }
 /* =========================================
    6. PROJECTS SECTION (절대 꺾이지 않는 완벽 대칭)
