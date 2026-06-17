@@ -250,96 +250,70 @@
 
           <div class="project-grid">
             
-            <article class="project-card">
-              <div class="project-image project-thumbnail">
-                <img src="images/wemove-web.png" alt="WeMove_Project 썸네일">
-              </div>
-              <div class="project-body">
-                <h3>WeMove</h3>
-                <p class="project-duration">⏱ 2026.05.15 ~ 2026.06.09 (약 3주)</p>
-                <p>
-                  사용자 지역 기반 운동 모임 플랫폼입니다. 모임 생성 및 참가,
-                  참가자 승인 상태 관리, 채팅, 관리자 기능 등을 구현한 웹
-                  서비스입니다.
-                </p>
-                <h4>담당 구현 기능</h4>
-                <ul class="project-roles">
-                  <li><strong>Authorization:</strong> 주최자·작성자 권한 분리 기반 모임 CRUD 구현</li>
-                  <li><strong>Business Logic:</strong> 모집 인원 변경에 따른 상태 자동 전환 로직 설계</li>
-                  <li><strong>Comment System:</strong> 계층형 댓글 및 연쇄 삭제 처리 로직 구현</li>
-                  <li><strong>Data Lifecycle:</strong> Soft Delete 기반 데이터 생애주기 관리</li>
-                </ul>
+            <!-- 첫 번째: WeMove 프로젝트 카드 -->
+      <article class="project-card" onclick="openModal('wemove-modal')" style="cursor: pointer;" title="클릭하여 상세 기술 문서 보기">
+        <div class="project-image project-thumbnail">
+          <img src="images/wemove-web.png" alt="WeMove_Project 썸네일">
+        </div>
+        <div class="project-body">
+          <h3>WeMove</h3>
+          <p class="project-duration">⏱ 2026.05.15 ~ 2026.06.09 (약 3주)</p>
+          <p>사용자 지역 기반 운동 모임 플랫폼입니다. 모임 생성 및 참가, 참가자 승인 상태 관리, 채팅, 관리자 기능 등을 구현한 웹 서비스입니다.</p>
+          <h4>담당 구현 기능</h4>
+          <ul class="project-roles">
+            <li><strong>Authorization:</strong> 주최자·작성자 권한 분리 기반 모임 CRUD 구현</li>
+            <li><strong>Business Logic:</strong> 모집 인원 변경에 따른 상태 자동 전환 로직 설계</li>
+            <li><strong>Comment System:</strong> 계층형 댓글 및 연쇄 삭제 처리 로직 구현</li>
+            <li><strong>Data Lifecycle:</strong> Soft Delete 기반 데이터 생애주기 관리</li>
+          </ul>
 
-                <div class="api-list">
-                  <span>API: Kakao Map, Daum Postcode, Gmail SMTP, Public Data: 법정동 코드</span>
-                </div>
-                <div class="tag-list">
-                  <span>Java</span><span>Spring Boot</span><span>MyBatis</span
-                  ><span>React</span><span>MySQL</span><span>Redis</span>
-                </div>
-                <div class="project-actions">
-                  <a
-                    href="https://github.com/kimnayoung7777/wemove-portfolio"
-                    target="_blank"
-                    rel="noopener"
-                    class="btn btn-small"
-                    >GitHub</a
-                  >
-                  <a
-                    href="https://wemove-portfolio.vercel.app"
-                    target="_blank"
-                    class="btn btn-small btn-outline"
-                    >Live Demo</a
-                  >
-                </div>
-              </div>
-            </article>
+          <div class="api-list">
+            <span>API: Kakao Map, Daum Postcode, Gmail SMTP, Public Data: 법정동 코드</span>
+          </div>
+          <div class="tag-list">
+            <span>Java</span><span>Spring Boot</span><span>MyBatis</span><span>React</span><span>MySQL</span><span>Redis</span>
+          </div>
+          
+          <div class="project-actions">
+            <!-- 🚨 버튼 클릭 시 모달이 뜨는 것을 막는 stopPropagation() 추가 -->
+            <a href="https://github.com/kimnayoung7777/wemove-portfolio" target="_blank" rel="noopener" class="btn btn-small" onclick="event.stopPropagation();">GitHub</a>
+            <a href="https://wemove-portfolio.vercel.app" target="_blank" class="btn btn-small btn-outline" onclick="event.stopPropagation();">Live Demo</a>
+          </div>
+        </div>
+      </article>
 
-            <article class="project-card">
-              <div class="project-image project-thumbnail">
-                <img src="images/greencarry-web.png" alt="GreenCarry_Project 썸네일" style="width: 100%; height:100%; object-fit:cover; ">
-              </div>
-              <div class="project-body">
-                <h3>Green Carry</h3>
-                <p class="project-duration">⏱ 2026.03.24 ~ 2026.04.22 (약 4주)</p>
-                <p>
-                  탄소 저감형 친환경 배달 플랫폼입니다. 사용자가 주문한 건에
-                  대해 탄소 배출 절감 수치를 체감하고 지속가능한 친환경 소비에
-                  동참하는 것을 목표로 개발했습니다.
-                </p>
-                <h4>담당 구현 기능</h4>
-                  <ul class="project-roles">
-                      <li><strong>Authentication:</strong> 일반회원·사업자 회원가입 및 로그인 기능 구현</li>
-                      <li><strong>Security:</strong> JWT 인증 및 BCrypt 기반 비밀번호 암호화 적용</li>
-                      <li><strong>Account Recovery:</strong> 이메일 인증 및 아이디·비밀번호 찾기 기능 구현</li>
-                      <li><strong>Customer Support:</strong> Q&A 및 1:1 문의 관리 기능 구현</li>
-                      <li><strong>Analytics:</strong> 매출 집계 쿼리 설계 및 통계 대시보드 구현</li>
-                  </ul>
+      <!-- 두 번째: Green Carry 프로젝트 카드 -->
+      <article class="project-card" onclick="openModal('greencarry-modal')" style="cursor: pointer;" title="클릭하여 상세 기술 문서 보기">
+        <div class="project-image project-thumbnail">
+          <img src="images/greencarry-web.png" alt="GreenCarry_Project 썸네일" style="width: 100%; height:100%; object-fit:cover; ">
+        </div>
+        <div class="project-body">
+          <h3>Green Carry</h3>
+          <p class="project-duration">⏱ 2026.03.24 ~ 2026.04.22 (약 4주)</p>
+          <p>탄소 저감형 친환경 배달 플랫폼입니다. 사용자가 주문한 건에 대해 탄소 배출 절감 수치를 체감하고 지속가능한 친환경 소비에 동참하는 것을 목표로 개발했습니다.</p>
+          <h4>담당 구현 기능</h4>
+          <ul class="project-roles">
+            <li><strong>Authentication:</strong> 일반회원·사업자 회원가입 및 로그인 기능 구현</li>
+            <li><strong>Security:</strong> JWT 인증 및 BCrypt 기반 비밀번호 암호화 적용</li>
+            <li><strong>Account Recovery:</strong> 이메일 인증 및 아이디·비밀번호 찾기 기능 구현</li>
+            <li><strong>Customer Support:</strong> Q&A 및 1:1 문의 관리 기능 구현</li>
+            <li><strong>Analytics:</strong> 매출 집계 쿼리 설계 및 통계 대시보드 구현</li>
+          </ul>
 
-                <div class="api-list">
-                  <span>API: Naver Map, Daum Postcode, Toss Payments, Gmail SMTP</span>
-                </div>
-                <div class="tag-list">
-                  <span>Java</span><span>Spring Boot</span><span>MyBatis</span
-                  ><span>React</span><span>Oracle</span>
-                </div>
-                <div class="project-actions">
-                  <a
-                    href="https://github.com/kimnayoung7777/GreenCarry_Project"
-                    target="_blank"
-                    rel="noopener"
-                    class="btn btn-small"
-                    >GitHub</a
-                  >
-                  <a
-                    href="https://greencarry.vercel.app/"
-                    target="_blank"
-                    class="btn btn-small btn-outline"
-                    >Live Demo</a
-                  >
-                </div>
-              </div>
-            </article>
+          <div class="api-list">
+            <span>API: Naver Map, Daum Postcode, Toss Payments, Gmail SMTP</span>
+          </div>
+          <div class="tag-list">
+            <span>Java</span><span>Spring Boot</span><span>MyBatis</span><span>React</span><span>Oracle</span>
+          </div>
+          
+          <div class="project-actions">
+            <!-- 🚨 버튼 클릭 시 모달이 뜨는 것을 막는 stopPropagation() 추가 -->
+            <a href="https://github.com/kimnayoung7777/GreenCarry_Project" target="_blank" rel="noopener" class="btn btn-small" onclick="event.stopPropagation();">GitHub</a>
+            <a href="https://greencarry.vercel.app/" target="_blank" class="btn btn-small btn-outline" onclick="event.stopPropagation();">Live Demo</a>
+          </div>
+        </div>
+      </article>
         </div>
             
       <section id="contact" class="section contact-section">
@@ -370,6 +344,158 @@
 
       <div id="toast" class="toast" onclick="hideToast()"></div>
 
+      <!--위무브 모달 영역-->
+      <div id="wemove-modal" class="tech-modal" onclick="closeModalOutside(event, 'wemove-modal')">
+        <div class="tech-modal-content">
+          <span class="tech-modal-close" onclick="closeModal('wemove-modal')">&times;</span>
+          
+          <div class="tech-modal-header">
+            <span class="eyebrow">Tech Document</span>
+            <h2>WeMove (운동 모임 플랫폼)</h2>
+           
+            <!-- 👇 모달 안에 추가된 깃허브/데모 버튼 -->
+            <div style="display: flex; gap: 10px; margin-top: 20px;">
+              <a href="https://github.com/kimnayoung7777/wemove-portfolio" target="_blank" rel="noopener" class="btn btn-small">GitHub</a>
+              <a href="https://wemove-portfolio.vercel.app" target="_blank" class="btn btn-small btn-outline">Live Demo</a>
+            </div>
+          </div>
+
+          <div class="tech-modal-body">
+            <div class="modal-section">
+              <h3>1. User Flow</h3>
+
+              <div class="modal-img-placeholder">
+                <img src="images/wemove_userflow.png" alt="WeMove 유저 플로우 이미지 삽입" style="width:100%; object-fit:cover;">
+              </div>
+            </div>
+
+            <div class="modal-section">
+              <h3>2. 핵심 설계 포인트</h3>
+              <ul class="modal-check-list">
+                <li><strong>권한 구조 (Authorization):</strong> 모임 주최자, 댓글 작성자, 관리자 권한 분리. 기능 단위가 아니라 역할 기반 접근 제어(RBAC)로 설계</li>
+                <li><strong>데이터 라이프사이클:</strong> Soft Delete 기반 데이터 관리. 삭제 시 데이터 물리 제거가 아닌 상태값 변경으로 데이터 추적 가능성 유지</li>
+                <li><strong>계층형 댓글 구조:</strong> 부모 댓글 및 대댓글 구조 설계. 삭제 시 구조 유지 로직 구현</li>
+              </ul>
+            </div>
+
+            <div class="modal-section">
+              <h4 class="sub-heading">아키텍처 다이어그램</h4>
+              <div class="modal-img-placeholder">
+                <img src="images/mermaid-diagram-wemove.png" alt="WeMove 아키텍처 이미지 삽입" style="width:100%; object-fit:cover;">
+              </div>
+            </div>
+
+            <div class="modal-section">
+              <h3>3. 트러블슈팅 및 해결 방식</h3>
+              <div class="trouble-solution-grid">
+                <div class="trouble-box">
+                  <h4>🔥 문제 상황</h4>
+                  <p><strong>운영자 관리 부재:</strong> 초기에는 작성자만 댓글 삭제가 가능해 부적절한 댓글 관리가 불가능</p>
+                  <p><strong>계층 구조 붕괴:</strong> 부모 댓글 삭제 시, 대댓글이 독립적으로 남아 구조가 깨질 위험성 존재</p>
+                  <p><strong>UX 혼란:</strong> 삭제된 댓글을 완전히 제거할 경우, 사용자가 이전 맥락을 인지할 수 없음</p>
+                </div>
+                <div class="solution-box">
+                  <h4>💡 해결 방식</h4>
+                  <p><strong>권한 기반 삭제 정책 분리:</strong> 작성자 삭제 시 (본인+하위 댓글 전체 삭제), 모임장 삭제 시 (데이터 유지+안내 문구 처리)</p>
+                  <p><strong>계층형 데이터 처리:</strong> <code>WHERE commentId = ? OR parentCommentId = ?</code> 쿼리로 부모 삭제 시 자식 댓글까지 일괄 처리</p>
+                  <p><strong>Soft Delete 적용:</strong> 물리 삭제 대신 상태값 기반 논리적 삭제 적용 및 조회 조건 분기 처리</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="modal-section">
+              <h3>4. 결과 및 핵심 키워드</h3>
+              <p>운영자 댓글 관리 구조를 설계하고, 계층형 구조 유지 및 데이터 무결성을 확보하여 사용자 UX를 개선했습니다.</p>
+              <div class="tag-list" style="margin-top: 10px;">
+                <span>RBAC (Role-based Authorization)</span>
+                <span>Hierarchical Comment Structure</span>
+                <span>Soft Delete Strategy</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!--그린캐리 모달영역-->
+      <div id="greencarry-modal" class="tech-modal" onclick="closeModalOutside(event, 'greencarry-modal')">
+        <div class="tech-modal-content">
+          <span class="tech-modal-close" onclick="closeModal('greencarry-modal')">&times;</span>
+          
+          <div class="tech-modal-header">
+            <span class="eyebrow">Tech Document</span>
+            <h2>Green Carry (탄소 저감 배달 플랫폼)</h2>
+
+            <!-- 👇 모달 안에 추가된 깃허브/데모 버튼 -->
+            <div style="display: flex; gap: 10px; margin-top: 20px;">
+              <a href="https://github.com/kimnayoung7777/GreenCarry_Project" target="_blank" rel="noopener" class="btn btn-small">GitHub</a>
+              <a href="https://greencarry.vercel.app/" target="_blank" class="btn btn-small btn-outline">Live Demo</a>
+            </div>
+          </div>
+
+          <div class="tech-modal-body">
+            <div class="modal-section">
+              <h3>1. User Flow</h3>
+              <div class="modal-img-placeholder">
+                <img src="images/greencarry_userflow.png" alt="GreenCarry 유저 플로우 이미지 삽입" style="width:100%; object-fit:cover;">
+              </div>
+            </div>
+
+            <div class="modal-section">
+              <h3>2. 핵심 설계 포인트</h3>
+              <ul class="modal-check-list">
+                <li><strong>데이터 집계 구조:</strong> 주문 / 주문 상세 / 매핑 테이블 조인 구조 설계 및 가맹점 기준 통계용 데이터 모델링</li>
+                <li><strong>매출 계산 로직:</strong> 배달 완료 기준 필터링 및 <code>SUM(quantity * price)</code> 기반 월 단위 실제 매출 집계</li>
+                <li><strong>프론트 시각화:</strong> ApexCharts 기반 YYYY-MM 기간 한정 조회 및 월별 추이/상품 비중 시각화</li>
+              </ul>
+            </div>
+
+            <div class="modal-section">
+              <h4 class="sub-heading">아키텍처 다이어그램</h4>
+              <div class="modal-img-placeholder">
+                <img src="images/mermaid-diagram-greencarry.png" alt="GreenCarry 아키텍처 이미지 삽입" style="width:100%; object-fit:cover;">
+              </div>
+            </div>
+
+            <div class="modal-section">
+              <h3>3. 트러블슈팅 및 해결 방식</h3>
+              <div class="trouble-solution-grid">
+                <div class="trouble-box">
+                  <h4>🔥 문제 상황</h4>
+                  <p><strong>매출 데이터 정합성:</strong> 주문 데이터 기준 통계를 단순 합산할 경우 취소/미완료 주문이 포함되는 문제 발생</p>
+                  <p><strong>시각화 비율 오차:</strong> 차트 비율 계산 시 소수점 반올림으로 인해 전체 합이 100%가 되지 않는 부동소수점 오차 발생 (예: 99.9%)</p>
+                </div>
+                <div class="solution-box">
+                  <h4>💡 해결 방식</h4>
+                  <p><strong>데이터 정합성 개선:</strong> <code>order_status = 5</code> (배달 완료) 데이터만 집계하여 불필요한 데이터를 원천 차단하고 결제 기준 반영</p>
+                  <p><strong>비율 오차 보정:</strong> 정수 기반 비율 계산 후 오차 값을 별도 산출하고, 편차가 큰 항목부터 재분배하여 합계 100%를 강제 보정</p>
+                </div>
+              </div>
+            </div>
+
+<div class="modal-section">
+              <h3>4. 실제 구현 결과</h3>
+              <!-- 이미지가 실제 들어갈 땐 점선 테두리와 배경색을 없애고 그림자를 주면 퀄리티가 확 올라갑니다 -->
+              <div class="modal-img-placeholder" style="border: none; background: transparent; min-height: auto;">
+                <img src="images/dashboard.png" alt="GreenCarry 실제 대시보드 결과" style="width:40%; object-fit:cover; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+              </div>
+              <p style="margin-top:16px; line-height: 1.6; color: var(--text);">
+                <strong>결제 확정 데이터 기반의 매출 집계 로직</strong>이 적용된 실제 관리자 대시보드 화면입니다. 매장의 월별 매출 추이뿐만 아니라 <strong>배달 경로 별 비중</strong>을 직관적으로 시각화했습니다. 특히 반올림 오차 보정 알고리즘을 통해 <strong>모든 수치의 총합이 정확히 100%로 일치</strong>하도록 구현하여 데이터 신뢰도를 높였습니다.
+              </p>
+            </div>
+
+            <div class="modal-section">
+              <h3>5. 핵심 키워드</h3>
+              <p>실제 결제 기준의 통계를 제공하여 데이터 정합성을 확보하고 시각화 정확도를 개선하여 관리자 대시보드의 신뢰성을 향상시켰습니다.</p>
+              <div class="tag-list" style="margin-top: 10px;">
+                <span>SQL JOIN Modeling</span>
+                <span>Data Aggregation</span>
+                <span>Data Consistency</span>
+                <span>Chart Data Correction</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
 
     </main>
 

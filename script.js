@@ -145,3 +145,28 @@ topBtn.addEventListener("click", () => {
     behavior: "smooth",
   });
 });
+
+/* =========================================
+   프로젝트 기술 문서 모달 제어
+   ========================================= */
+
+// 모달 열기
+function openModal(modalId) {
+  document.getElementById(modalId).style.display = "block";
+  document.body.style.overflow = "hidden"; // 배경 스크롤 방지
+}
+
+// 모달 닫기 (X 버튼)
+function closeModal(modalId) {
+  document.getElementById(modalId).style.display = "none";
+  document.body.style.overflow = "auto"; // 스크롤 원상복구
+}
+
+// 모달 바깥 영역(배경) 클릭 시 닫기
+function closeModalOutside(event, modalId) {
+  const modal = document.getElementById(modalId);
+  if (event.target === modal) {
+    modal.style.display = "none";
+    document.body.style.overflow = "auto";
+  }
+}
