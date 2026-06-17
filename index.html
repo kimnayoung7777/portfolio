@@ -396,8 +396,8 @@
                 </div>
                 <div class="solution-box">
                   <h4>💡 해결 방식</h4>
-                  <p><strong>권한 기반 삭제 정책 분리:</strong> 작성자 삭제 시 (본인+하위 댓글 전체 삭제), 모임장 삭제 시 (데이터 유지+안내 문구 처리)</p>
-                  <p><strong>계층형 데이터 처리:</strong> <code>WHERE commentId = ? OR parentCommentId = ?</code> 쿼리로 부모 삭제 시 자식 댓글까지 일괄 처리</p>
+                  <p><strong>권한 기반 삭제 정책 분리:</strong> 논리적 삭제(Soft Delete) 시 <code>isDeleted = #{isDeleted}</code>를 적용하여 상태값을 세분화했습니다. 작성자 본인이 삭제한 경우(<code>isDeleted = 1</code>)와 모임장이 삭제한 경우(<code>isDeleted = 2</code>)를 구분하여, 화면단에서 각 주체에 맞는 적절한 안내 문구와 UI가 렌더링되도록 설계했습니다.</p>
+                  <p><strong>계층형 데이터 처리:</strong> <code>WHERE commentId = #{commentId} OR parentCommentId = #{commentId}</code> 쿼리로 부모 삭제 시 자식 댓글까지 일괄 처리</p>
                   <p><strong>Soft Delete 적용:</strong> 물리 삭제 대신 상태값 기반 논리적 삭제 적용 및 조회 조건 분기 처리</p>
                 </div>
               </div>
